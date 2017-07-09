@@ -1681,7 +1681,7 @@
    MarkerClusterer.IMAGE_SIZES = [53, 56, 66, 78, 90];
 
    var layers=[];
-   layers[0] = new  google.maps.KmlLayer('http://bioskopaceh.com/p11_kabupaten_a_15102012_Lay2.kmz',
+   layers[0] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/jalan_provinsi.kmz',
    {preserveViewport: true});
 
    var map;
