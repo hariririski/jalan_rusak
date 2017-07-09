@@ -1684,6 +1684,10 @@
    layers[0] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/jalan_provinsi.kmz',
    {preserveViewport: true});
 
+   var layers=[];
+   layers[1] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/batas_kabupaten.kmz',
+   {preserveViewport: true});
+
    var map;
 
 	function initialize() {
@@ -1817,10 +1821,37 @@ function toggleLayers(i)
             </div>
             <div class="col-md-2">
                 <div class="candidate wow fadeInRight">
-                    <!-- CEK -->
+          Layer
 					<table border='0'>
 					<tr>
-					<td width='85%'> <input type="checkbox" id="layer_01" onclick="toggleLayers(0);"/>Peta Jalan Provinsi</td>
+					<td width='85%'> <input type="checkbox" id="layer_01" onclick="toggleLayers(0);"/> Jalan Provinsi</td>
+					</tr>
+          <tr>
+					<td width='85%'> <input type="checkbox" id="layer_01" onclick="toggleLayers(0);"/> Batas Kabupaten</td>
+					</tr>
+					<!-- <tr>
+					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/> Arah Aliran Air Tanah</td>
+					</tr>
+					<tr>
+					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(2);"/> Peta Cekungan Air Tanah</td>
+					</tr> -->
+					</table >
+
+          <br>
+          <br>
+          Keterangan
+          <table border='0'>
+					<tr>
+					<td width='15%'><img src="<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png" width="80%"> </td>
+					<td width='70%%'> Jalan Rusak Berat</td>
+					</tr>
+          <tr>
+					<td width='15%'><img src="<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png" width="80%"> </td>
+					<td width='70%%'> Jalan Rusak Ringan</td>
+					</tr>
+          <tr>
+					<td width='15%'><img src="<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png" width="80%"> </td>
+					<td width='70%%'> Jalan Belum Tembus</td>
 					</tr>
 					<!-- <tr>
 					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/> Arah Aliran Air Tanah</td>
