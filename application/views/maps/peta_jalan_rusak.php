@@ -1760,7 +1760,7 @@
 				var id= locations[i][0];
 
 				$.ajax({
-					url : "get_info_databases_baru.php",
+					url : "<?php echo site_url(); ?>popup",
 					data : "id=" +id+"&&l="+lokasi,
 					success : function(data) {
 							infowindow.setContent(data);

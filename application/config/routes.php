@@ -54,6 +54,7 @@ $route['default_controller'] = 'Home';
 $route['home'] = 'Home';
 $route['home_admin'] = 'Home_admin';
 $route['peta'] = 'Peta';
+$route['popup'] = 'Peta/popup';
 
 /*-----------------------------------------------------------------------*/
 $route['pengaduan'] = 'Pengaduan';
