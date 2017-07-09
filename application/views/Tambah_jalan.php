@@ -6,37 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Jalan</title>
+  <title>Tambah Jalan</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap-extend.min.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/css/site.min.css">
-  <!-- Plugins -->
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/animsition/animsition.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/intro-js/introjs.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/slidepanel/slidePanel.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/flag-icon-css/flag-icon.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/waves/waves.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/examples/css/tables/datatable.css">
-  <!-- Fonts -->
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/font-awesome/font-awesome.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/material-design/material-design.min.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/brand-icons/brand-icons.min.css">
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-  <!--[if lt IE 9]>
-    <script src="<?php echo site_url(); ?>assets/global/vendor/html5shiv/html5shiv.min.js"></script>
-    <![endif]-->
-  <!--[if lt IE 10]>
-    <script src="<?php echo site_url(); ?>assets/global/vendor/media-match/media.match.min.js"></script>
-    <script src="<?php echo site_url(); ?>assets/global/vendor/respond/respond.min.js"></script>
-    <![endif]-->
-  <!-- Scripts -->
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap-extend.min.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/css/site.min.css">
+   <!-- Plugins -->
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/animsition/animsition.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/intro-js/introjs.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/slidepanel/slidePanel.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/flag-icon-css/flag-icon.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/waves/waves.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/select2/select2.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-select/bootstrap-select.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/icheck/icheck.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asrange/asRange.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asspinner/asSpinner.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/clockpicker/clockpicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/ascolorpicker/asColorPicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-touchspin/bootstrap-touchspin.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/card/card.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/jquery-labelauty/jquery-labelauty.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-maxlength/bootstrap-maxlength.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/jt-timepicker/jquery-timepicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/jquery-strength/jquery-strength.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/multi-select/multi-select.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/typeahead-js/typeahead.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/examples/css/forms/advanced.css">
+   <!-- Fonts -->
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/material-design/material-design.min.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/brand-icons/brand-icons.min.css">
+   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
   <script>
@@ -51,161 +58,322 @@
 
   <div class="page animsition">
     <div class="page-header">
-      <h1 class="page-title">Administrator</h1>
-      <ol class="breadcrumb">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="javascript:void(0)">Tables</a></li>
-        <li class="active">DataTables</li>
-      </ol>
+      <h1 class="page-title">Tambah Jalan</h1>
+
 
     </div>
     <div class="page-content">
       <div class="panel">
-          <div class="panel-heading">
-            <h3 class="panel-title">Full Example
-              <span class="panel-desc">Basic validation will display a label with the error after the form
-                control. </span>
-            </h3>
-          </div>
+
           <div class="panel-body">
-            <form id="exampleFullForm" autocomplete="off" novalidate="novalidate" class="fv-form fv-form-bootstrap"><button type="submit" class="fv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+            <form autocomplete="off"  class="fv-form fv-form-bootstrap">
+
               <div class="row row-lg">
                 <div class="col-lg-6 form-horizontal">
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Username
+                    <h3 class="panel-title">Jalan</h3>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Kode Ruas
                       <span class="required">*</span>
                     </label>
-                    <div class=" col-lg-12 col-sm-9">
-                      <input type="text" class="form-control" name="username" placeholder="John Fish" required="" data-fv-field="username">
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="username" data-fv-result="INVALID" style="">The username is required</small><small class="help-block" data-fv-validator="stringLength" data-fv-for="username" data-fv-result="VALID" style="display: none;">Please enter a value with valid length</small><small class="help-block" data-fv-validator="regexp" data-fv-for="username" data-fv-result="VALID" style="display: none;">Please enter a value matching the pattern</small></div>
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control focus" name="kode_ruas" placeholder="Kode Ruas" required=""  >
+
                   </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Email
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">No Ruas
                       <span class="required">*</span>
                     </label>
-                    <div class="col-lg-12 col-sm-9">
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <i class="icon md-email" aria-hidden="true"></i>
-                        </span>
-                        <input type="email" class="form-control" name="email" placeholder="email@email.com" required="" data-fv-field="email">
-                      </div>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="email" data-fv-result="INVALID" style="">The username is required</small><small class="help-block" data-fv-validator="emailAddress" data-fv-for="email" data-fv-result="VALID" style="display: none;">The email address is not valid</small></div>
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control" name="no_ruas" placeholder="No Ruas" required="" >
+                    </div>
                   </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Password
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Status
                       <span class="required">*</span>
                     </label>
-                    <div class="col-lg-12 col-sm-9">
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <i class="icon md-lock" aria-hidden="true"></i>
-                        </span>
-                        <input type="password" class="form-control" name="password" placeholder="Min length 8" required="" data-fv-field="password">
-                      </div>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="password" data-fv-result="INVALID" style="">The password is required</small><small class="help-block" data-fv-validator="stringLength" data-fv-for="password" data-fv-result="VALID" style="display: none;">Please enter a value with valid length</small></div>
-                  </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Birthday
-                      <span class="required">*</span>
-                    </label>
-                    <div class="col-lg-12 col-sm-9">
-                      <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" required="" data-fv-field="birthday">
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="birthday" data-fv-result="INVALID" style="">The birthday is required</small><small class="help-block" data-fv-validator="date" data-fv-for="birthday" data-fv-result="VALID" style="display: none;">Please enter a valid date</small></div>
-                  </div>
-                  <div class="form-group form-material has-success">
-                    <label class="col-lg-12 col-sm-3 control-label">GitHub</label>
-                    <div class="col-lg-12 col-sm-9">
-                      <input type="url" class="form-control" name="github" placeholder="https://github.com/amazingSurge" data-fv-field="github">
-                    <small class="help-block" data-fv-validator="uri" data-fv-for="github" data-fv-result="VALID" style="display: none;">Please enter a valid URI</small></div>
-                  </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Company</label>
-                    <div class="col-lg-12 col-sm-9">
-                      <select class="form-control" id="company" name="company" required="" data-fv-field="company">
-                        <option value="">Choose a Company</option>
-                        <option value="apple">Apple</option>
-                        <option value="google">Google</option>
-                        <option value="microsoft">Microsoft</option>
-                        <option value="yahoo">Yahoo</option>
+                    <div class=" col-lg-9 col-sm-9">
+                      <select class="form-control select2-hidden-accessible" data-plugin="select2" data-placeholder="Pilih status" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <optgroup >
+                          <option value="">Pilih Status Jalan</option>
+                          <option value="Jalan Nasional">Jalan Nasional</option>
+                          <option value="Jalan Provinsi">Jalan Provinsi</option>
+                        </optgroup>
+
+                        </optgroup>
                       </select>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Please company</small></div>
+                    </div>
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Ruas Jalan
+                      <span class="required">*</span>
+                    </label>
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control" name="ruasjalan" placeholder="Ruas Jalan" required="" >
+                    </div>
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Panjang KM
+                      <span class="required">*</span>
+                    </label>
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control" name="Panjang KM" placeholder="panjang KM" required="" >
+                    </div>
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Dari
+                      <span class="required">*</span>
+                    </label>
+                    <div class=" col-lg-3 col-sm-9">
+                      <input type="text" class="form-control" name="status" placeholder="Status" required="" >
+                    </div>
+
+                    <label class="col-lg-2 col-sm-3 control-label">Ke
+                      <span class="required">*</span>
+                    </label>
+                    <div class=" col-lg-4 col-sm-9">
+                      <input type="text" class="form-control" name="status" placeholder="Status" required="" >
+                    </div>
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Panjang KM
+                      <span class="required">*</span>
+                    </label>
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control" name="Panjang KM" placeholder="panjang KM" required="" >
+                    </div>
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Kabupaten
+                      <span class="required">*</span>
+                    </label>
+                    <div class="col-lg-9 col-sm-9">
+                      <select class="form-control select2-hidden-accessible" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <optgroup label="Alaskan/Hawaiian Time Zone">
+                          <option value="AK">Alaska</option>
+                          <option value="HI">Hawaii</option>
+                        </optgroup>
+                        <optgroup label="Pacific Time Zone">
+                          <option value="CA">California</option>
+                          <option value="NV">Nevada</option>
+                          <option value="OR">Oregon</option>
+                          <option value="WA">Washington</option>
+                        </optgroup>
+                        <optgroup label="Mountain Time Zone">
+                          <option value="AZ">Arizona</option>
+                          <option value="CO">Colorado</option>
+                          <option value="ID">Idaho</option>
+                          <option value="MT">Montana</option>
+                          <option value="NE">Nebraska</option>
+                          <option value="NM">New Mexico</option>
+                          <option value="ND">North Dakota</option>
+                          <option value="UT">Utah</option>
+                          <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                          <option value="AL">Alabama</option>
+                          <option value="AR">Arkansas</option>
+                          <option value="IL">Illinois</option>
+                          <option value="IA">Iowa</option>
+                          <option value="KS">Kansas</option>
+                          <option value="KY">Kentucky</option>
+                          <option value="LA">Louisiana</option>
+                          <option value="MN">Minnesota</option>
+                          <option value="MS">Mississippi</option>
+                          <option value="MO">Missouri</option>
+                          <option value="OK">Oklahoma</option>
+                          <option value="SD">South Dakota</option>
+                          <option value="TX">Texas</option>
+                          <option value="TN">Tennessee</option>
+                          <option value="WI">Wisconsin</option>
+                        </optgroup>
+                        <optgroup label="Eastern Time Zone">
+                          <option value="CT">Connecticut</option>
+                          <option value="DE">Delaware</option>
+                          <option value="FL">Florida</option>
+                          <option value="GA">Georgia</option>
+                          <option value="IN">Indiana</option>
+                          <option value="ME">Maine</option>
+                          <option value="MD">Maryland</option>
+                          <option value="MA">Massachusetts</option>
+                          <option value="MI">Michigan</option>
+                          <option value="NH">New Hampshire</option>
+                          <option value="NJ">New Jersey</option>
+                          <option value="NY">New York</option>
+                          <option value="NC">North Carolina</option>
+                          <option value="OH">Ohio</option>
+                          <option value="PA">Pennsylvania</option>
+                          <option value="RI">Rhode Island</option>
+                          <option value="SC">South Carolina</option>
+                          <option value="VT">Vermont</option>
+                          <option value="VA">Virginia</option>
+                          <option value="WV">West Virginia</option>
+                        </optgroup>
+                      </select>
+                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Pilih Kabupaten</small></div>
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Kecamatan
+                      <span class="required">*</span>
+                    </label>
+                    <div class="col-lg-9 col-sm-9">
+
+                        <select class="form-control select2-hidden-accessible" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                          <optgroup label="Alaskan/Hawaiian Time Zone">
+                            <option value="AK">Alaska</option>
+                            <option value="HI">Hawaii</option>
+                          </optgroup>
+                          <optgroup label="Pacific Time Zone">
+                            <option value="CA">California</option>
+                            <option value="NV">Nevada</option>
+                            <option value="OR">Oregon</option>
+                            <option value="WA">Washington</option>
+                          </optgroup>
+                          <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="UT">Utah</option>
+                            <option value="WY">Wyoming</option>
+                          </optgroup>
+                          <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TX">Texas</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="WI">Wisconsin</option>
+                          </optgroup>
+                          <optgroup label="Eastern Time Zone">
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="IN">Indiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="OH">Ohio</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WV">West Virginia</option>
+                          </optgroup>
+                        </select>
+                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Plilh Kecataman</small></div>
                   </div>
                 </div>
+
                 <div class="col-lg-6 form-horizontal">
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Remark Admin is
-                      <span class="required">*</span>
-                    </label>
-                    <div class="col-lg-12 col-sm-9">
-                      <div class="input-group">
-                        <div>
-                          <div class="radio-custom radio-primary">
-                            <input type="radio" id="inputAwesome" name="porto_is" value="awesome" required="" data-fv-field="porto_is">
-                            <label for="inputAwesome">Awesome</label>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="radio-custom radio-primary">
-                            <input type="radio" id="inputVeryAwesome" name="porto_is" value="very-awesome" data-fv-field="porto_is">
-                            <label for="inputVeryAwesome">Very Awesome</label>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="radio-custom radio-primary">
-                            <input type="radio" id="inputUltraAwesome" name="porto_is" value="ultra-awesome" data-fv-field="porto_is">
-                            <label for="inputUltraAwesome">Ultra Awesome</label>
-                          </div>
+                    <h3 class="panel-title">Kolektor Primer</h3>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Nama
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="nama" placeholder="Nama" required="" >
+
+                    </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">No
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Keterangan
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="Ketengan" placeholder="Keterangan" required="" >
+                      </div>
+                    </div>
+
+                    <h3 class="panel-title">Kondisi Jalan</h3>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Baik
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="baik" placeholder="Baik" required="" >
+
+                    </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Sedang
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="sedang" placeholder="Sedang" required="" >
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Rusak Ringan
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Rusak Ringan" required="" >
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Rusak Berat
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Rusak Ringan" required="" >
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Belum Tembus
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Rusak Ringan" required="" >
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Upload Dokumen
+                        <span class="required">*</span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <div class="input-group input-group-file">
+                          <input type="text" class="form-control" readonly="">
+                          <span class="input-group-btn">
+                            <span class="btn btn-primary btn-file waves-effect waves-light">
+                              <i class="icon md-upload" aria-hidden="true"></i>
+                              <input type="file" name="" multiple="">
+                            </span>
+                          </span>
                         </div>
                       </div>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="porto_is" data-fv-result="INVALID" style="">Please specify at least one</small></div>
-                  </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">I will use it for
-                      <span class="required">*</span>
-                    </label>
-                    <div class="col-lg-12 col-sm-9">
-                      <div class="input-group">
-                        <div>
-                          <div class="checkbox-custom checkbox-primary">
-                            <input type="checkbox" id="inputForProject" name="for[]" value="project" required="" data-fv-field="for[]">
-                            <label for="inputForProject">My Project</label>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="checkbox-custom checkbox-primary">
-                            <input type="checkbox" id="inputForWebsite" name="for[]" value="website" data-fv-field="for[]">
-                            <label for="inputForWebsite">My Website</label>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="checkbox-custom checkbox-primary">
-                            <input type="checkbox" id="inputForAll" name="for[]" value="all" data-fv-field="for[]">
-                            <label for="inputForAll">All things I do</label>
-                          </div>
-                        </div>
-                      </div>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="for[]" data-fv-result="INVALID" style="">Please specify at least one</small></div>
-                  </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Skills
-                      <span class="required">*</span>
-                    </label>
-                    <div class="col-lg-12 col-sm-9">
-                      <textarea class="form-control" name="skills" rows="3" placeholder="Describe your skills" required="" data-fv-field="skills"></textarea>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="skills" data-fv-result="INVALID" style="">The skills is required</small><small class="help-block" data-fv-validator="stringLength" data-fv-for="skills" data-fv-result="VALID" style="display: none;">Please enter a value with valid length</small></div>
-                  </div>
-                  <div class="form-group form-material has-error">
-                    <label class="col-lg-12 col-sm-3 control-label">Browsers</label>
-                    <div class="col-lg-12 col-sm-9">
-                      <select class="form-control" id="browsers" name="browsers" title="Please select at least one browser" size="5" multiple="multiple" required="" data-fv-field="browsers">
-                        <option value="chrome">Chrome / Safari</option>
-                        <option value="ff">Firefox</option>
-                        <option value="ie">Internet Explorer</option>
-                        <option value="opera">Opera</option>
-                      </select>
-                    <small class="help-block" data-fv-validator="notEmpty" data-fv-for="browsers" data-fv-result="INVALID" style="">Please specify at least one browser you use daily for development</small></div>
-                  </div>
+                    </div>
+
+
+
+
                 </div>
                 <div class="form-group form-material col-lg-12 text-right padding-top-m">
                   <button type="submit" class="btn btn-primary waves-effect waves-light" >Submit</button>
@@ -233,13 +401,32 @@
   <script src="<?php echo site_url(); ?>assets/global/vendor/intro-js/intro.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/screenfull/screenfull.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/slidepanel/jquery-slidePanel.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-tabletools/dataTables.tableTools.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/select2/select2.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-select/bootstrap-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/icheck/icheck.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.min.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/asrange/jquery-asRange.min.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/bootbox/bootbox.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/asspinner/jquery-asSpinner.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/ascolor/jquery-asColor.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/asgradient/jquery-asGradient.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-knob/jquery.knob.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/card/jquery.card.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jt-timepicker/jquery.timepicker.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datepair-js/datepair.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datepair-js/jquery.datepair.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-strength/jquery-strength.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/multi-select/jquery.multi-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/typeahead-js/bloodhound.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
   <!-- Scripts -->
   <script src="<?php echo site_url(); ?>assets/global/js/core.js"></script>
   <script src="<?php echo site_url(); ?>assets/assets/js/site.js"></script>
@@ -253,8 +440,27 @@
   <script src="<?php echo site_url(); ?>assets/global/js/components/slidepanel.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/switchery.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/tabs.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/js/components/datatables.js"></script>
-  <script src="<?php echo site_url(); ?>assets/assets/examples/js/tables/datatable.js"></script>
-  <script src="<?php echo site_url(); ?>assets/assets/examples/js/uikit/icon.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/select2.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-tokenfield.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-tagsinput.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/icheck.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/switchery.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/asrange.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/asspinner.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/clockpicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/ascolorpicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-maxlength.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-knob.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-touchspin.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/card.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-labelauty.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-datepicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jt-timepicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/datepair-js.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-strength.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/multi-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-placeholder.js"></script>
+  <script src="<?php echo site_url(); ?>assets/assets/examples/js/forms/advanced.js"></script>
 </body>
 </html>

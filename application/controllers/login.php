@@ -48,7 +48,7 @@ class Login extends CI_Controller {
 	}
 
 	public function proses_login() {
-		$cek=$this->M_login->login();
+		$cek=$this->M_Login->login();
 		if($cek==true){
 			$username= $cek[0]->username;
 			session_save_path();

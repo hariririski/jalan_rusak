@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   			 $this->load->library('session');
   			 $this->load->database();
          $admin=$this->session->userdata('admin');
+         $this->load->model('M_Jalan');
          if(empty($admin)==1){
             redirect("login/logout");
            }
@@ -16,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
          public function index()
        	{
-
+          //$data['lihat'] = $this->M_Jalan->Lihat_jalan();
        		$this->load->view('Lihat_jalan');
        	}
 

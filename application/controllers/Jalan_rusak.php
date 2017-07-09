@@ -14,6 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        		$this->load->view('Lihat_jalan_rusak');
       }
 
+      public function tambah_jalan_rusak(){
+       		$this->load->view('tambah_jalan_rusak');
+      }
+
 
    }
 ?>

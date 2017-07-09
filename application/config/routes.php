@@ -53,6 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Home';
 $route['home'] = 'Home';
 $route['home_admin'] = 'Home_admin';
+$route['peta'] = 'Peta';
 
 /*-----------------------------------------------------------------------*/
 $route['pengaduan'] = 'Pengaduan';
@@ -73,6 +74,10 @@ $route['jalan'] = 'Jalan';
 $route['tambah_jalan'] = 'Jalan/tambah_jalan';
 $route['edit_jalan'] = 'Jalan/edit_jalan';
 $route['detail_jalan'] = 'Jalan/detail_jalan';
+
+/*-----------------------------------------------------------------------*/
+$route['tambah_jalan_rusak'] = 'Jalan_rusak/tambah_jalan_rusak';
+
 
 /*-----------------------------------------------------------------------*/
 $route['admin'] = 'Admin';
