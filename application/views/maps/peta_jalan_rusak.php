@@ -1683,8 +1683,6 @@
    var layers=[];
    layers[0] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/jalan_provinsi.kmz',
    {preserveViewport: true});
-
-   var layers=[];
    layers[1] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/batas_kabupaten.kmz',
    {preserveViewport: true});
 
@@ -1824,10 +1822,10 @@ function toggleLayers(i)
           Layer
 					<table border='0'>
 					<tr>
-					<td width='85%'> <input type="checkbox" id="layer_01" onclick="toggleLayers(0);"/> Jalan Provinsi</td>
+					<td width='85%'> <input type="checkbox" id="layer_0" onclick="toggleLayers(0);"/> Jalan Provinsi</td>
 					</tr>
           <tr>
-					<td width='85%'> <input type="checkbox" id="layer_01" onclick="toggleLayers(0);"/> Batas Kabupaten</td>
+					<td width='85%'> <input type="checkbox" id="layer_02" onclick="toggleLayers(1);"/> Batas Kabupaten</td>
 					</tr>
 					<!-- <tr>
 					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/> Arah Aliran Air Tanah</td>
