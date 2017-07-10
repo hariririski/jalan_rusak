@@ -1,6 +1,6 @@
 <?php
 class M_Kecamatan extends CI_Model{
-    function lihat_Kecamatan()
+    function lihat_kecamatan()
     {
         $query=$this->db->query("SELECT * FROM `kecamatan` left join kabupaten on kecamatan.id_kabupaten=kabupaten.id_kabupaten");
         return $query->result();

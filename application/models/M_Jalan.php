@@ -2,7 +2,7 @@
 class M_Jalan extends CI_Model{
     function lihat_jalan()
     {
-        $query=$this->db->query("");
+        $query=$this->db->query("select * from jalan");
         return $query->result();
     }
 

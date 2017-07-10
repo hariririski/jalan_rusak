@@ -7,6 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   			 $this->load->helper('url');
   			 $this->load->library('session');
   			 $this->load->database();
+         $this->load->model('M_Kabupaten');
+         $this->load->model('M_Kecamatan');
+         $this->load->model('M_Jalan');
   			 }
 
 
@@ -18,8 +21,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function tambah_pengaduan()
        {
-
-         $this->load->view('Tambah_pengaduan');
+         $data['kabupaten'] = $this->M_Kabupaten->lihat_kabupaten();
+         $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
+         $this->load->view('Tambah_pengaduan',$data);
        }
 
 

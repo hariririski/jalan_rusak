@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          public function index()
        	{
           $data['select'] = $this->M_Kabupaten->lihat_kabupaten();
-          $data['lihat'] = $this->M_Kecamatan->lihat_Kecamatan();
+          $data['lihat'] = $this->M_Kecamatan->lihat_kecamatan();
        		$this->load->view('lihat_Kecamatan',$data);
        	}
 
