@@ -78,8 +78,8 @@
         </form>
 
         <footer class="page-copyright">
-          <p>WEBSITE BY amazingSurge</p>
-          <p>© 2016. All RIGHT RESERVED.</p>
+      
+          <p>© 2017. BINA MARGA PROVINSI ACEH.</p>
 
         </footer>
       </div>
