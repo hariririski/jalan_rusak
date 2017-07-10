@@ -1683,7 +1683,7 @@
    var layers=[];
    layers[0] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/jalan_provinsi.kmz',
    {preserveViewport: true});
-   layers[1] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/batas_kabupaten.kmz',
+   layers[1] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/batas_kabupaten3.kmz',
    {preserveViewport: true});
 
    var map;
