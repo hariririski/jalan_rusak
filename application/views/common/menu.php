@@ -28,8 +28,20 @@
         <li class="dropdown">
           <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
           data-animation="scale-up" role="button">
-            <span class="avatar avatar-online">
-              <img src="<?php echo site_url(); ?>assets/global/portraits/5.jpg" alt="...">
+
+              <?php
+              $admin=$this->session->userdata('admin');
+               if(empty($admin)==0){
+              ?>
+              <span class="avatar avatar-online">
+              <img src="<?php echo site_url(); ?>assets/assets/images/logout.png" alt="...">
+              <?php } ?>
+              <?php
+               if(empty($admin)==1){
+              ?>
+              <span class="avatar avatar-offline">
+              <img src="<?php echo site_url(); ?>assets/assets/images/login.png" alt="...">
+              <?php } ?>
               <i></i>
             </span>
           </a>
@@ -87,7 +99,7 @@
       <div>
         <ul class="site-menu">
           <li class="site-menu-category ">General</li>
-          <li class="site-menu-item has-sub active">
+          <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="home"){ echo "active";} ?>">
             <a href="<?php echo site_url(); ?>home"  data-dropdown-toggle="false">
               <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
               <span class="site-menu-title">Beranda</span>
@@ -95,9 +107,9 @@
             </a>
 
           </li>
-          <li class="site-menu-item has-sub">
+          <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="jalan"||$link =="jalan_rusak"){ echo "active";} ?>">
             <a href="javascript:void(0)" data-dropdown-toggle="false">
-              <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
+              <i class="site-menu-icon md-view-list-alt" aria-hidden="true"></i>
               <span class="site-menu-title">Lihat Data</span>
               <span class="site-menu-arrow"></span>
             </a>
@@ -106,13 +118,13 @@
               $admin=$this->session->userdata('admin');
                if(empty($admin)==0){
               ?>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="jalan"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>jalan">
                   <span class="site-menu-title">Data Jalan</span>
                 </a>
               </li>
               <?php } ?>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="jalan_rusak"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>jalan_rusak">
                   <span class="site-menu-title">Data Jalan Rusak</span>
                 </a>
@@ -125,19 +137,19 @@
           $admin=$this->session->userdata('admin');
            if(empty($admin)==0){
           ?>
-          <li class="site-menu-item has-sub">
+          <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="tambah_jalan"||$link =="tambah_jalan_rusak"){ echo "active";}?> ">
             <a href="javascript:void(0)" data-dropdown-toggle="false">
-              <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
+              <i class="site-menu-icon  md-playlist-plus" aria-hidden="true"></i>
               <span class="site-menu-title">Input</span>
               <span class="site-menu-arrow"></span>
             </a>
-            <ul class="site-menu-sub">
-              <li class="site-menu-item">
+            <ul class="site-menu-sub ">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="tambah_jalan"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>tambah_jalan">
                   <span class="site-menu-title">Input Jalan</span>
                 </a>
               </li>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="tambah_jalan_rusak"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>tambah_jalan_rusak">
                   <span class="site-menu-title">Input Jalan Rusak</span>
                 </a>
@@ -145,11 +157,11 @@
             </ul>
           </li>
           <?php } ?>
-        
 
-          <li class="site-menu-item has-sub">
+
+          <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="pengaduan"||$link =="tambah_pengaduan"){ echo "active";}?> ">
             <a href="javascript:void(0)" data-dropdown-toggle="false">
-              <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
+              <i class="site-menu-icon md-accounts-list-alt"" aria-hidden="true"></i>
               <span class="site-menu-title">Pegaduan Masyarakat</span>
               <span class="site-menu-arrow"></span>
             </a>
@@ -158,13 +170,13 @@
               $admin=$this->session->userdata('admin');
                if(empty($admin)==0){
               ?>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="pengaduan"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>pengaduan">
                   <span class="site-menu-title">Lihat Pengaduan</span>
                 </a>
               </li>
               <?php } ?>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="tambah_pengaduan"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>tambah_pengaduan">
                   <span class="site-menu-title">Tambah Pengaduan</span>
                 </a>
@@ -175,25 +187,25 @@
           $admin=$this->session->userdata('admin');
            if(empty($admin)==0){
           ?>
-          <li class="site-menu-item has-sub">
+          <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="admin"||$link =="kabupaten"||$link =="kecamatan"){ echo "active";} ?>">
             <a href="javascript:void(0)" data-dropdown-toggle="false">
-              <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
+              <i class="site-menu-icon md-settings" aria-hidden="true"></i>
               <span class="site-menu-title">Pengaturan</span>
               <span class="site-menu-arrow"></span>
             </a>
             <ul class="site-menu-sub">
 
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="admin"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>admin">
                   <span class="site-menu-title">Admin</span>
                 </a>
               </li>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="kabupaten"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>kabupaten">
                   <span class="site-menu-title">Kabupaten</span>
                 </a>
               </li>
-              <li class="site-menu-item">
+              <li class="site-menu-item <?php $link=uri_string(); if($link =="kecamatan"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>kecamatan">
                   <span class="site-menu-title">Kecamatan</span>
                 </a>
