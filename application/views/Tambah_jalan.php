@@ -66,7 +66,7 @@
       <div class="panel">
 
           <div class="panel-body">
-            <form autocomplete="off"  class="fv-form fv-form-bootstrap">
+            <form   action="jalan/proses_tambah_jalan" method="post" enctype="multipart/form-data" class="fv-form fv-form-bootstrap">
 
               <div class="row row-lg">
                 <div class="col-lg-6 form-horizontal">
@@ -101,7 +101,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="ruasjalan" placeholder="Ruas Jalan" required="" >
+                      <input type="text" class="form-control" name="nama_jalan" placeholder="Ruas Jalan" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -109,7 +109,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="Panjang KM" placeholder="panjang KM" required="" >
+                      <input type="text" class="form-control" name="panjang_km" placeholder="Panjang KM" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -117,22 +117,14 @@
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-3 col-sm-9">
-                      <input type="text" class="form-control" name="status" placeholder="Status" required="" >
+                      <input type="text" class="form-control" name="dari" placeholder="Dari" required="" >
                     </div>
 
                     <label class="col-lg-2 col-sm-3 control-label">Ke
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-4 col-sm-9">
-                      <input type="text" class="form-control" name="status" placeholder="Status" required="" >
-                    </div>
-                  </div>
-                  <div class="form-group form-material ">
-                    <label class="col-lg-3 col-sm-3 control-label">Panjang KM
-                      <span class="required">*</span>
-                    </label>
-                    <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="Panjang KM" placeholder="panjang KM" required="" >
+                      <input type="text" class="form-control" name="ke" placeholder="Status" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -140,7 +132,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class="col-lg-9 col-sm-9">
-                      <select class="form-control select2-hidden-accessible" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                      <select class="form-control select2-hidden-accessible" name="id_kabupaten" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
                         <?php
                            $i=0;
@@ -158,7 +150,7 @@
                     </label>
                     <div class="col-lg-9 col-sm-9">
 
-                        <select class="form-control select2-hidden-accessible" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select class="form-control select2-hidden-accessible" name="id_kecamatan" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
                           <?php
                              $i=0;
@@ -175,20 +167,20 @@
                 <div class="col-lg-6 form-horizontal">
                     <h3 class="panel-title">Kolektor Primer</h3>
                     <div class="form-group form-material ">
-                      <label class="col-lg-3 col-sm-3 control-label">Nama
+                      <label class="col-lg-3 col-sm-3 control-label">Nama KJP
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="nama" placeholder="Nama" required="" >
+                        <input type="text" class="form-control" name="nama_jkp" placeholder="Nama KJP" required="" >
 
                     </div>
                     </div>
                     <div class="form-group form-material ">
-                      <label class="col-lg-3 col-sm-3 control-label">No
+                      <label class="col-lg-3 col-sm-3 control-label">No KJP
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                        <input type="text" class="form-control" name="no_kjp" placeholder="No KJP" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -196,7 +188,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="Ketengan" placeholder="Keterangan" required="" >
+                        <input type="text" class="form-control" name="ketengan" placeholder="Keterangan" required="" >
                       </div>
                     </div>
 
@@ -206,7 +198,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="baik" placeholder="Baik" required="" >
+                        <input type="text" class="form-control" name="baik" placeholder="Luas Jalan Kondisi Baik" required="" >
 
                     </div>
                     </div>
@@ -215,7 +207,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="sedang" placeholder="Sedang" required="" >
+                        <input type="text" class="form-control" name="sedang" placeholder="Luas Jalan Kondisi Sedang" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -223,7 +215,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Rusak Ringan" required="" >
+                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Luas Jalan Kondisi Rusak Ringan" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -231,7 +223,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Rusak Ringan" required="" >
+                        <input type="text" class="form-control" name="rusak_berat" placeholder="Luas Jalan Kondisi Rusak Ringan" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -239,11 +231,11 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Rusak Ringan" required="" >
+                        <input type="text" class="form-control" name="belum_tembus" placeholder="Luas Jalan Kondisi Belum Tembus" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
-                      <label class="col-lg-3 col-sm-3 control-label">Upload Dokumen
+                      <label class="col-lg-3 col-sm-3 control-label">Upload Dokument
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
@@ -252,7 +244,7 @@
                           <span class="input-group-btn">
                             <span class="btn btn-primary btn-file waves-effect waves-light">
                               <i class="icon md-upload" aria-hidden="true"></i>
-                              <input type="file" name="" multiple="">
+                              <input type="file" name="gambar" class="form-control" multiple="">
                             </span>
                           </span>
                         </div>
