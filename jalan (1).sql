@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2017 at 03:24 PM
+-- Generation Time: Jul 14, 2017 at 03:58 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -47,21 +47,12 @@ INSERT INTO `admin` (`nama_lengkap`, `password`, `username`, `terakhir_login`) V
 --
 
 CREATE TABLE `fungsi` (
-  `namajkp` varchar(250) NOT NULL,
-  `nojkp` varchar(250) NOT NULL,
-  `keterangan` varchar(250) NOT NULL,
-  `koderuas` int(100) NOT NULL,
-  `kodefungsi` int(255) NOT NULL
+  `kode_ruas` int(50) NOT NULL,
+  `kode_fungsi` int(50) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `no_kjp` varchar(50) NOT NULL,
+  `nama_kjp` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `fungsi`
---
-
-INSERT INTO `fungsi` (`namajkp`, `nojkp`, `keterangan`, `koderuas`, `kodefungsi`) VALUES
-('hdgyhcgy', '54747648468', 'hehhegehv', 34, 37),
-('1', '1', '1', 11, 38),
-('1', '1', '1', 1, 39);
 
 -- --------------------------------------------------------
 
@@ -70,23 +61,42 @@ INSERT INTO `fungsi` (`namajkp`, `nojkp`, `keterangan`, `koderuas`, `kodefungsi`
 --
 
 CREATE TABLE `jalan` (
-  `kode_ruas` int(100) NOT NULL,
-  `no_ruas` int(100) DEFAULT NULL,
-  `status` varchar(100) DEFAULT NULL,
-  `ruas_jalan` varchar(100) DEFAULT NULL,
-  `panjang_km` varchar(100) DEFAULT NULL,
-  `dari` varchar(250) DEFAULT NULL,
-  `ke` varchar(250) DEFAULT NULL,
-  `document` varchar(255) DEFAULT NULL
+  `kode_ruas` int(50) NOT NULL,
+  `dari` int(50) NOT NULL,
+  `ke` int(50) NOT NULL,
+  `no_ruas` int(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `dokument` varchar(255) NOT NULL,
+  `rusak_ringan` int(50) NOT NULL,
+  `rusak_sedang` int(50) NOT NULL,
+  `rusak_berat` int(50) NOT NULL,
+  `baik` int(50) NOT NULL,
+  `panjang_km` int(50) NOT NULL,
+  `id_kecamatan` int(50) NOT NULL,
+  `id_kabupaten` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `jalan`
+-- Table structure for table `jalan_rusak`
 --
 
-INSERT INTO `jalan` (`kode_ruas`, `no_ruas`, `status`, `ruas_jalan`, `panjang_km`, `dari`, `ke`, `document`) VALUES
-(1, 1, '1', '1', '1', '1', '1', 'Sekolah.png'),
-(11, 1, '1', '1', '1', '1', '1', 'Sekolah.png');
+CREATE TABLE `jalan_rusak` (
+  `kode_ruas` int(50) NOT NULL,
+  `id_kabupaten` int(50) NOT NULL,
+  `id_kecamatan` int(50) NOT NULL,
+  `kode_jalan_rusak` int(50) NOT NULL,
+  `kondisi` int(3) NOT NULL,
+  `lat` varchar(50) NOT NULL,
+  `lon` varchar(50) NOT NULL,
+  `desa` varchar(50) NOT NULL,
+  `keterangan` varchar(50) NOT NULL,
+  `luas_jalan` int(50) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `tgl_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -130,54 +140,27 @@ INSERT INTO `kecamatan` (`id_kecamatan`, `nama_kecamatan`, `id_kabupaten`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kondisi_jalan`
+-- Table structure for table `pengaduan`
 --
 
-CREATE TABLE `kondisi_jalan` (
-  `baik` varchar(250) NOT NULL,
-  `sedang` varchar(250) NOT NULL,
-  `rusakringan` varchar(250) NOT NULL,
-  `rusakberat` varchar(250) NOT NULL,
-  `belumtembus` varchar(250) NOT NULL,
-  `koderuas` int(100) NOT NULL,
-  `id` int(255) NOT NULL
+CREATE TABLE `pengaduan` (
+  `id_kecamatan` int(50) NOT NULL,
+  `id_kabupaten` int(50) NOT NULL,
+  `kode_pengaduan` int(255) NOT NULL,
+  `kondisi` int(3) NOT NULL,
+  `lat` int(50) NOT NULL,
+  `lon` int(50) NOT NULL,
+  `desa` varchar(50) NOT NULL,
+  `keterangan` varchar(50) NOT NULL,
+  `luas_jalan` int(50) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `tanggal_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `nama_pelapor` varchar(50) NOT NULL,
+  `no_ktp_pelapor` int(20) NOT NULL,
+  `alamat_pelapor` varchar(255) NOT NULL,
+  `no_hp_pelapor` varchar(15) NOT NULL,
+  `nama_jalan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kondisi_jalan`
---
-
-INSERT INTO `kondisi_jalan` (`baik`, `sedang`, `rusakringan`, `rusakberat`, `belumtembus`, `koderuas`, `id`) VALUES
-('', '', '', '', '', 0, 37),
-('', '', '', '', '', 0, 38),
-('', '', '', '', '', 0, 39),
-('3637683738', '3737373', '7647648479', '3797497497', '3989479847948', 34, 40),
-('1', '1', '1', '1', '1', 11, 41),
-('1', '1', '1', '1', '1', 1, 42);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mempunyai`
---
-
-CREATE TABLE `mempunyai` (
-  `kode` int(10) NOT NULL,
-  `koderuas` int(100) NOT NULL,
-  `kodemempunyai` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mempunyai`
---
-
-INSERT INTO `mempunyai` (`kode`, `koderuas`, `kodemempunyai`) VALUES
-(0, 0, 37),
-(29, 0, 38),
-(0, 0, 39),
-(29, 34, 40),
-(29, 11, 41),
-(0, 1, 42);
 
 --
 -- Indexes for dumped tables
@@ -193,13 +176,21 @@ ALTER TABLE `admin`
 -- Indexes for table `fungsi`
 --
 ALTER TABLE `fungsi`
-  ADD PRIMARY KEY (`kodefungsi`);
+  ADD PRIMARY KEY (`kode_fungsi`);
 
 --
 -- Indexes for table `jalan`
 --
 ALTER TABLE `jalan`
   ADD PRIMARY KEY (`kode_ruas`);
+
+--
+-- Indexes for table `jalan_rusak`
+--
+ALTER TABLE `jalan_rusak`
+  ADD PRIMARY KEY (`kode_jalan_rusak`),
+  ADD UNIQUE KEY `lat` (`lat`),
+  ADD UNIQUE KEY `lon` (`lon`);
 
 --
 -- Indexes for table `kabupaten`
@@ -215,26 +206,22 @@ ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id_kecamatan`);
 
 --
--- Indexes for table `kondisi_jalan`
+-- Indexes for table `pengaduan`
 --
-ALTER TABLE `kondisi_jalan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `mempunyai`
---
-ALTER TABLE `mempunyai`
-  ADD PRIMARY KEY (`kodemempunyai`);
+ALTER TABLE `pengaduan`
+  ADD PRIMARY KEY (`kode_pengaduan`),
+  ADD UNIQUE KEY `lat` (`lat`),
+  ADD UNIQUE KEY `lon` (`lon`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `fungsi`
+-- AUTO_INCREMENT for table `jalan_rusak`
 --
-ALTER TABLE `fungsi`
-  MODIFY `kodefungsi` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+ALTER TABLE `jalan_rusak`
+  MODIFY `kode_jalan_rusak` int(50) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kabupaten`
 --
@@ -246,15 +233,10 @@ ALTER TABLE `kabupaten`
 ALTER TABLE `kecamatan`
   MODIFY `id_kecamatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `kondisi_jalan`
+-- AUTO_INCREMENT for table `pengaduan`
 --
-ALTER TABLE `kondisi_jalan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
---
--- AUTO_INCREMENT for table `mempunyai`
---
-ALTER TABLE `mempunyai`
-  MODIFY `kodemempunyai` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+ALTER TABLE `pengaduan`
+  MODIFY `kode_pengaduan` int(255) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
