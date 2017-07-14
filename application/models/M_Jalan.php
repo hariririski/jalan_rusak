@@ -8,11 +8,11 @@ class M_Jalan extends CI_Model{
 
     function tambah_jalan($new_name)
     {
-      $foto= $new_name;
-      $foto=str_replace(" ","_",$foto);
+      $document= $new_name;
+      $dokument=str_replace(" ","_",$document);
       $jalan = array(
           'kode_ruas'     =>$this->input->post('kode_ruas'),
-          'no_ruas'       =>$this->input->post('no_ruas_ruas'),
+          'no_ruas'       =>$this->input->post('no_ruas'),
           'status'        =>$this->input->post('status'),
           'nama_jalan'    =>$this->input->post('nama_jalan'),
           'panjang_km'    =>$this->input->post('panjang_km'),
@@ -25,16 +25,17 @@ class M_Jalan extends CI_Model{
           'rusak_ringan'  =>$this->input->post('rusak_ringan'),
           'rusak_berat'   =>$this->input->post('rusak_berat'),
           'belum_tembus'  =>$this->input->post('belum_tembus'),
-          'foto'          =>$foto
+          'dokument'      =>$document
       );
-      $dungsi = array(
+      $fungsi = array(
           'kode_ruas'     =>$this->input->post('kode_ruas'),
+          'kode_fungsi'     =>$this->input->post('kode_ruas'),
           'nama_kjp'      =>$this->input->post('nama_kjp'),
-          'no_kjp'      =>$this->input->post('no_kjp'),
+          'no_kjp'        =>$this->input->post('no_kjp'),
           'keterangan'    =>$this->input->post('keterangan')
       );
       $cek=$this->db->insert('jalan',$jalan);
-      $cek2=$this->db->insert('jalan',$fungsi);
+      $cek2=$this->db->insert('fungsi',$fungsi);
       return $cek;
     }
 

@@ -171,7 +171,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="nama_jkp" placeholder="Nama KJP" required="" >
+                        <input type="text" class="form-control" name="nama_kjp" placeholder="Nama KJP" required="" >
 
                     </div>
                     </div>
@@ -188,7 +188,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="ketengan" placeholder="Keterangan" required="" >
+                        <input type="text" class="form-control" name="keterangan" placeholder="Keterangan" required="" >
                       </div>
                     </div>
 
@@ -244,7 +244,7 @@
                           <span class="input-group-btn">
                             <span class="btn btn-primary btn-file waves-effect waves-light">
                               <i class="icon md-upload" aria-hidden="true"></i>
-                              <input type="file" name="gambar" class="form-control" multiple="">
+                              <input type="file" name="document" class="form-control" multiple="">
                             </span>
                           </span>
                         </div>

@@ -38,11 +38,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $config['max_size']      = 99999999;
         //$config['max_width']     = 10240;
         //$config['max_height']    = 7680;
-        $new_name ="JALAN".time().$_FILES["gambar"] ['name'];
+        $new_name ="JALAN".time().$_FILES["document"] ['name'];
         $config['file_name']=$new_name;
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('gambar')) {
+        if ( ! $this->upload->do_upload('document')) {
 
                 $this->session->set_flashdata('pesan', '
                 <div class="alert alert-danger fade in">
