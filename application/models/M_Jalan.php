@@ -2,7 +2,7 @@
 class M_Jalan extends CI_Model{
     function lihat_jalan()
     {
-        $query=$this->db->query("select * from jalan");
+        $query=$this->db->query("SELECT * FROM `jalan` INNER JOIN fungsi on jalan.kode_ruas=fungsi.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan.id_kecamatan");
         return $query->result();
     }
 

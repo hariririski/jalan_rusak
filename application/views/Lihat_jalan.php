@@ -62,13 +62,15 @@
 
         </header>
         <div class="panel-body">
+          <br>
           <table class="table table-hover dataTable table-striped width-full" data-plugin="dataTable">
             <thead>
               <tr>
                 <th>NO</th>
                 <th>Kode Ruas</th>
                 <th>Nama Jalan</th>
-                <th>Status</th>
+                <th>Kabupaten</th>
+                <th>Kecamatan</th>
                 <th>Detail</th>
                 <th>Hapus</th>
               </tr>
@@ -78,7 +80,8 @@
                 <th>NO</th>
                 <th>Kode Ruas</th>
                 <th>Nama Jalan</th>
-                <th>Status</th>
+                <th>Kabupaten</th>
+                <th>Kecamatan</th>
                 <th>Detail</th>
                 <th>Hapus</th>
               </tr>
@@ -91,7 +94,11 @@
                ?>
                 <tr>
                   <td><?php echo $i; ?></td>
+                  <td><?php echo $data_jalan->kode_ruas; ?></td>
+                  <td><?php echo $data_jalan->nama_jalan; ?></td>
                   <td><?php echo $data_jalan->nama_kabupaten; ?></td>
+                  <td><?php echo $data_jalan->nama_kecamatan; ?></td>
+
                   <?php
                   echo"<td class='center' width='10%'><a href='". site_url()."edit_kabupaten?id=$data_jalan->id_kabupaten' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-warning'>Edit</button></a>

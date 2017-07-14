@@ -19,9 +19,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
          public function index()
        	{
-
-
-       		$this->load->view('Lihat_jalan');
+          $data['lihat'] = $this->M_jalan->lihat_jalan();
+       		$this->load->view('Lihat_jalan',$data);
        	}
 
         public function tambah_jalan()
