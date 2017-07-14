@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Tambah Jalan</title>
+  <title>Tambah Pengaduan</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -46,6 +46,7 @@
    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
   <script>
   Breakpoints();
   </script>
@@ -65,7 +66,7 @@
 
 </head>
 <body class="site-navbar-small ">
-
+<?php echo $this->session->flashdata('pesan')?>
 
 <?php echo $this->load->view('common/menu', '', TRUE);?>
 
@@ -80,7 +81,7 @@
       <div class="panel">
 
           <div class="panel-body">
-            <form   class="fv-form fv-form-bootstrap">
+            <form  action="pengaduan/proses_tambah_pengaduan" method="post" enctype="multipart/form-data"   class="fv-form fv-form-bootstrap">
 
               <div class="row row-lg">
                 <div class="col-lg-6 form-horizontal">
@@ -90,7 +91,7 @@
                           <span class="required">*</span>
                         </label>
                         <div class=" col-lg-9 col-sm-9">
-                          <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                          <input type="text" class="form-control" name="no_ktp" placeholder="No KTP" required="" >
                         </div>
                       </div>
                         <div class="form-group form-material ">
@@ -98,7 +99,7 @@
                             <span class="required">*</span>
                           </label>
                           <div class=" col-lg-9 col-sm-9">
-                            <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                            <input type="text" class="form-control" name="nama" placeholder="Nama" required="" >
                           </div>
                         </div>
                         <div class="form-group form-material ">
@@ -106,7 +107,7 @@
                             <span class="required">*</span>
                           </label>
                           <div class=" col-lg-9 col-sm-9">
-                            <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                            <input type="text" class="form-control" name="alamat" placeholder="Alamat" required="" >
                           </div>
                         </div>
                         <div class="form-group form-material ">
@@ -114,7 +115,7 @@
                               <span class="required">*</span>
                             </label>
                             <div class=" col-lg-9 col-sm-9">
-                              <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                              <input type="text" class="form-control" name="no_hp" placeholder="No HP" required="" >
                             </div>
                         </div>
                     <h3 class="panel-title">Data Jalan</h3>
@@ -124,7 +125,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class="col-lg-9 col-sm-9">
-                        <select class="form-control select2-hidden-accessible" required data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select class="form-control select2-hidden-accessible" name="id_kabupaten" required data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
                         <?php
                            $i=0;
@@ -134,14 +135,14 @@
                         <option value="<?php echo $kabupaten->id_kabupaten; ?>"><?php echo $kabupaten->nama_kabupaten; ?></option>
                         <?php } ?>
                         </select>
-                      <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Pilih Kabupaten</small></div>
+                      <small class="help-block" data-fv-validator="notEmpty"  data-fv-for="company" data-fv-result="INVALID" style="">Pilih Kabupaten</small></div>
                     </div>
                     <div class="form-group form-material ">
                       <label class="col-lg-3 col-sm-3 control-label">Kecamatan
                         <span class="required">*</span>
                       </label>
                       <div class="col-lg-9 col-sm-9">
-                        <select class="form-control select2-hidden-accessible" required data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select class="form-control select2-hidden-accessible" name="id_kecamatan" required data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
                           <?php
                              $i=0;
@@ -165,7 +166,7 @@
                     <label class="col-lg-3 col-sm-3 control-label">Keterangan Lokasi jalan Lainnya
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="Keterangan" placeholder="Keterangan" >
+                      <input type="text" class="form-control" name="keterangan" placeholder="Keterangan" >
                     </div>
                   </div>
 
@@ -174,7 +175,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="no_ruas" placeholder="No" required="" >
+                        <input type="text" class="form-control" name="nama_jalan" placeholder="Nama Jalan" required="" >
                       </div>
                     </div>
                 </div>
@@ -188,19 +189,19 @@
 
                         <div>
                           <div class="radio-custom radio-primary">
-                            <input type="radio" id="inputAwesome" name="porto_is" value="awesome" required="" data-fv-field="porto_is">
+                            <input type="radio" id="inputAwesome" name="kondisi" value="1" required="" data-fv-field="porto_is">
                             <label for="inputAwesome">Rusak Ringan</label>
                           </div>
                         </div>
                         <div>
                           <div class="radio-custom radio-primary">
-                            <input type="radio" id="inputVeryAwesome" name="porto_is" value="very-awesome" data-fv-field="porto_is">
+                            <input type="radio" id="inputVeryAwesome" name="kondisi" value="2" data-fv-field="porto_is">
                             <label for="inputVeryAwesome">Rusak Berat</label>
                           </div>
                         </div>
                         <div>
                           <div class="radio-custom radio-primary">
-                            <input type="radio" id="inputUltraAwesome" name="porto_is" value="ultra-awesome" data-fv-field="porto_is">
+                            <input type="radio" id="inputUltraAwesome" name="kondisi" value="3" data-fv-field="porto_is">
                             <label for="inputUltraAwesome">Belum Tembus</label>
                           </div>
                         </div>
@@ -212,7 +213,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="ruas_jalan_rusak" placeholder="Luas Jalan Rusak" required="" >
+                      <input type="text" class="form-control" name="luas_jalan" placeholder="Luas Jalan Rusak" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -221,11 +222,24 @@
                       <div id="map"></div>
                       <div class="form-group form-material ">
                         <label class="col-lg-3 col-sm-3 control-label">Lokasi Koodinat
-                          <span class="required">*</span>
                         </label>
                         <div class=" col-lg-9 col-sm-9">
-                          <input type="text" class="form-control"  id='latitude'  name="ruas_jalan_rusak" placeholder="Luas Jalan Rusak" required="" >
-                          <input type="text" class="form-control" id='longitude' name="ruas_jalan_rusak" placeholder="Luas Jalan Rusak" required="" >
+                          <br>
+                          <div class=" col-lg-4 col-sm-3">
+                            <label class="col-lg-4 col-sm-1 control-label">Lat
+                            </label>
+                          </div>
+                          <div class=" col-lg-5 col-sm-3">
+                            <input type="text"  class="col-lg-5 col-sm-3 form-control" id="latitude"  name="lat" placeholder="Latitude" required="" >
+                          </div>
+
+                          <div class=" col-lg-4 col-sm-3">
+                            <label class="col-lg-4 col-sm-1 control-label">Lon
+                            </label>
+                          </div>
+                          <div class=" col-lg-5 col-sm-3">
+                            <input type="text"  class="col-lg-5 col-sm-3 form-control" id="longitude"  name="lon" placeholder="Longitude" required="" >
+                          </div>
                       </div>
                     </div>
                         <script type="text/javascript">
@@ -273,7 +287,7 @@
                         <span class="input-group-btn">
                           <span class="btn btn-primary btn-file waves-effect waves-light">
                             <i class="icon md-upload" aria-hidden="true"></i>
-                            <input type="file" name="" multiple="">
+                            <input type="file" name="gambar" multiple="">
                           </span>
                         </span>
                       </div>
@@ -369,5 +383,7 @@
   <script src="<?php echo site_url(); ?>assets/global/js/components/multi-select.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-placeholder.js"></script>
   <script src="<?php echo site_url(); ?>assets/assets/examples/js/forms/advanced.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/toastr.js"></script>
 </body>
 </html>
