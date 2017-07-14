@@ -1695,7 +1695,8 @@
          $i=0;
          foreach($lihat as $data_jalan_rusak){
        ?>
-                  ['<?php echo $data_jalan_rusak->kode_jalan_rusak ?>', <?php echo $data_jalan_rusak->lat ?>,<?php echo $data_jalan_rusak->lon ?>,'<?php echo site_url(); ?>assets/maps/cluster/icon/<?php if($data_jalan_rusak->kondisi==1){echo"ringan.png";}else if($data_jalan_rusak->kondisi==2){echo"berat.png";}else if($data_jalan_rusak->kondisi==2){echo"blm_tembus.png";} ?>'],
+                  
+                  ['<?php echo $data_jalan_rusak->kode_jalan_rusak ?>', <?php echo $data_jalan_rusak->lat ?>,<?php echo $data_jalan_rusak->lon ?>,'<?php echo site_url(); ?>assets/maps/cluster/icon/<?php if($data_jalan_rusak->kondisi==1){echo"ringan.png";}else if($data_jalan_rusak->kondisi==2){echo"berat.png";}else if($data_jalan_rusak->kondisi==3){echo"blm_tembus.png";} ?>'],
       <?php }?>
 
 

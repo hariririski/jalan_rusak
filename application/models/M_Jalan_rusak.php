@@ -2,18 +2,18 @@
 class M_Jalan_rusak extends CI_Model{
     function lihat_jalan_rusak()
     {
-        $query=$this->db->query("SELECT * FROM jalan_rusak LEFT JOIN jalan on jalan.kode_ruas-jalan_rusak.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan_rusak.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan_rusak.id_kecamatan");
+        $query=$this->db->query("SELECT * FROM jalan_rusak LEFT JOIN jalan on jalan.kode_ruas=jalan_rusak.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan_rusak.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan_rusak.id_kecamatan");
         return $query->result();
     }
 
     function lihat_jalan_rusak_aktif()
     {
-        $query=$this->db->query("SELECT * FROM jalan_rusak LEFT JOIN jalan on jalan.kode_ruas-jalan_rusak.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan_rusak.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan_rusak.id_kecamatan where jalan_rusak.perbaikan is null");
+        $query=$this->db->query("SELECT * FROM jalan_rusak LEFT JOIN jalan on jalan.kode_ruas=jalan_rusak.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan_rusak.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan_rusak.id_kecamatan where jalan_rusak.perbaikan is null");
         return $query->result();
     }
     function jalan_rusak($id)
     {
-        $query=$this->db->query("SELECT * FROM jalan_rusak LEFT JOIN jalan on jalan.kode_ruas-jalan_rusak.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan_rusak.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan_rusak.id_kecamatan where jalan_rusak.kode_jalan_rusak='$id'");
+        $query=$this->db->query("SELECT * FROM jalan_rusak LEFT JOIN jalan on jalan.kode_ruas=jalan_rusak.kode_ruas LEFT JOIN kabupaten on kabupaten.id_kabupaten=jalan_rusak.id_kabupaten LEFT JOIN kecamatan on kecamatan.id_kecamatan=jalan_rusak.id_kecamatan where jalan_rusak.kode_jalan_rusak='$id'");
         return $query->result();
     }
 

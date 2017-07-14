@@ -53,7 +53,17 @@
 									:
 								</td>
 								<td>
-									<?php echo $data_jalan_rusak->kondisi;?>
+									
+									<?php
+									if($data_jalan_rusak->kondisi==1){
+										echo '<span class="label label-round label-warning">Rusak Ringan</span>';
+									}else if($data_jalan_rusak->kondisi==2){
+										echo '<span class="label label-round label-danger">Rusak Parah</span>';
+									}else if($data_jalan_rusak->kondisi==3){
+										echo '<span class="label label-round label-primary">Belum Tembus</span>';
+									}
+
+									?>
 								</td>
 							</tr>
 							<tr>
@@ -64,7 +74,7 @@
 									:
 								</td>
 								<td>
-									<?php echo $data_jalan_rusak->nama_jalan;?>
+									<?php echo $data_jalan_rusak->nama_kabupaten;?>
 								</td>
 							</tr>
 							<tr>
@@ -75,7 +85,7 @@
 									:
 								</td>
 								<td>
-									<?php echo $data_jalan_rusak->nama_jalan;?>
+									<?php echo $data_jalan_rusak->nama_kecamatan;?>
 								</td>
 							</tr>
 						</table>
