@@ -46,12 +46,13 @@
    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
+    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
   <script>
   Breakpoints();
   </script>
 </head>
 <body class="site-navbar-small ">
-
+<?php echo $this->session->flashdata('pesan')?>
 
 <?php echo $this->load->view('common/menu', '', TRUE);?>
 
@@ -342,5 +343,7 @@
   <script src="<?php echo site_url(); ?>assets/global/js/components/multi-select.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-placeholder.js"></script>
   <script src="<?php echo site_url(); ?>assets/assets/examples/js/forms/advanced.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/toastr.js"></script>
 </body>
 </html>

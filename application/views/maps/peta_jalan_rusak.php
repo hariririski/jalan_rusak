@@ -1691,43 +1691,12 @@
 	function initialize() {
 
     var locations = [
-                  ['1', 5.5179043, 95.4150374,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['2', 5.564727, 95.2916273,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['3', 5.5296475, 95.3273787,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['4', 5.5393917, 95.3383061,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['5', 5.5590778, 95.3146845,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['6', 5.5288147, 95.3553828,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['7', 5.557099, 95.319949,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['9', 5.541523, 95.336731,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['10', 5.553176, 95.315252,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['11', 5.554331, 95.317973,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['12', 5.559196, 95.316023,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['13', 5.528757, 95.295455,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['14', 5.529051, 95.295077,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['15', 5.551317, 95.356862,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['17', 5.539135, 95.308949,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['18', 5.554425, 95.330767,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['19', 5.555246, 95.325322,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['20', 5.5651334, 95.3370447,'<?php echo site_url(); ?>assets/maps/cluster/icon/berat.png'],
-                      ['21', 5.560588, 95.319143,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['22', 5.5300117, 95.3290412,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['23', 5.553083, 95.316233,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['24', 5.553782, 95.316673,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['25', 5.558446, 95.3216,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['26', 5.555518, 95.314827,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['27', 5.561851, 95.323903,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['28', 5.555963, 95.344517,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['29', 5.569549, 95.341656,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['30', 5.539135, 95.308949,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['31', 5.545076, 95.323745,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['32', 5.557407, 95.319027,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['33', 5.5579304, 95.318999,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['34', 5.564435, 95.33621,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['35', 5.564512, 95.293805,'<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png'],
-                      ['36', 5.553273, 95.319501,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['37', 5.554851, 95.317786,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['38', 5.554693, 95.314685,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
-                      ['39', 5.558032, 95.320359,'<?php echo site_url(); ?>assets/maps/cluster/icon/ringan.png'],
+      <?php
+         $i=0;
+         foreach($lihat as $data_jalan_rusak){
+       ?>
+                  ['<?php echo $data_jalan_rusak->kode_jalan_rusak ?>', <?php echo $data_jalan_rusak->lat ?>,<?php echo $data_jalan_rusak->lon ?>,'<?php echo site_url(); ?>assets/maps/cluster/icon/<?php if($data_jalan_rusak->kondisi==1){echo"ringan.png";}else if($data_jalan_rusak->kondisi==2){echo"berat.png";}else if($data_jalan_rusak->kondisi==2){echo"blm_tembus.png";} ?>'],
+      <?php }?>
 
 
       ];

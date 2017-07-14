@@ -52,7 +52,7 @@
 
   <div class="page animsition">
     <div class="page-header">
-      <h1 class="page-title">Data Jalan</h1>
+      <h1 class="page-title">Data Jalan Rusak</h1>
 
     </div>
     <div class="page-content">
@@ -63,12 +63,16 @@
 
         </header>
         <div class="panel-body">
+          <br>
           <table class="table table-hover dataTable table-striped width-full" data-plugin="dataTable">
             <thead>
               <tr>
                 <th>NO</th>
                 <th>Kode Ruas</th>
                 <th>Nama Jalan</th>
+                <th>Kondisi</th>
+                <th>Kabupaten</th>
+                <th>kecamatan</th>
                 <th>Status</th>
                 <th>Detail</th>
                 <th>Hapus</th>
@@ -79,6 +83,9 @@
                 <th>NO</th>
                 <th>Kode Ruas</th>
                 <th>Nama Jalan</th>
+                <th>Kondisi</th>
+                <th>Kabupaten</th>
+                <th>kecamatan</th>
                 <th>Status</th>
                 <th>Detail</th>
                 <th>Hapus</th>
@@ -92,14 +99,39 @@
                ?>
                 <tr>
                   <td><?php echo $i; ?></td>
+                  <td><?php echo $data_jalan->kode_ruas; ?></td>
+                  <td><?php echo $data_jalan->nama_jalan; ?></td>
+                  <td>
+                    <?php
+                    if($data_jalan->kondisi==1){
+                      echo '<span class="label label-round label-warning">Rusak Ringan</span>';
+                    }else if($data_jalan->kondisi==2){
+                      echo '<span class="label label-round label-danger">Rusak Parah</span>';
+                    }else if($data_jalan->kondisi==3){
+                      echo '<span class="label label-round label-primary">Belum Tembus</span>';
+                    }
+
+                    ?>
+                  </td>
                   <td><?php echo $data_jalan->nama_kabupaten; ?></td>
+                  <td><?php echo $data_jalan->nama_kecamatan; ?></td>
+                  <td>
+                    <?php
+                    if($data_jalan->perbaikan==null){
+                      echo '<span class="label label-round label-danger">Belum Diperbaikan</span>';
+                    }else if($data_jalan->kondisi==1){
+                      echo '<span class="label label-round label-success">Sudah Diperbaikan</span>';
+                    }
+
+                    ?>
+                  </td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."edit_kabupaten?id=$data_jalan->id_kabupaten' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
+                  echo"<td class='center' width='10%'><a href='". site_url()."edit_kabupaten?id=$data_jalan->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-warning'>Edit</button></a>
                     </td>";
                   ?>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."Kabupaten/proses_hapus_kabupaten?id=$data_jalan->id_kabupaten' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
+                  echo"<td class='center' width='10%'><a href='". site_url()."Kabupaten/proses_hapus_kabupaten?id=$data_jalan->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-danger'>Hapus</button></a>
                     </td>";
                   ?>
