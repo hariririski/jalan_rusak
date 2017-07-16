@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/font-awesome/font-awesome.css">
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/material-design/material-design.min.css">
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/brand-icons/brand-icons.min.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <!--[if lt IE 9]>
     <script src="<?php echo site_url(); ?>assets/global/vendor/html5shiv/html5shiv.min.js"></script>
@@ -45,7 +46,7 @@
 
 </head>
 <body class="site-navbar-small ">
-
+<?php echo $this->session->flashdata('pesan')?>
 
 <?php echo $this->load->view('common/menu', '', TRUE);?>
 
@@ -126,12 +127,12 @@
                     ?>
                   </td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."edit_kabupaten?id=$data_jalan->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
-                    \" title='Hapus'><button type='button' class='btn btn-warning'>Edit</button></a>
+                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan_rusak'>
+                  <button type='button' class='btn btn-success'>Detail</button></a>
                     </td>";
                   ?>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."Kabupaten/proses_hapus_kabupaten?id=$data_jalan->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
+                  echo"<td class='center' width='10%'><a href='". site_url()."jalan_rusak/proses_hapus_jalan_rusak?id=$data_jalan->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-danger'>Hapus</button></a>
                     </td>";
                   ?>
@@ -188,5 +189,7 @@
   <script src="<?php echo site_url(); ?>assets/global/js/components/datatables.js"></script>
   <script src="<?php echo site_url(); ?>assets/assets/examples/js/tables/datatable.js"></script>
   <script src="<?php echo site_url(); ?>assets/assets/examples/js/uikit/icon.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/toastr.js"></script>
 </body>
 </html>

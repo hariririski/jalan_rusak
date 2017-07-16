@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $admin=$this->session->userdata('admin');
          $this->load->model('M_Kabupaten');
          $this->load->model('M_Kecamatan');
-         $this->load->model('M_jalan');
+         $this->load->model('M_Jalan');
          if(empty($admin)==1){
             redirect("login/logout");
            }
@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
          public function index()
        	{
-          $data['lihat'] = $this->M_jalan->lihat_jalan();
+          $data['lihat'] = $this->M_Jalan->lihat_jalan();
        		$this->load->view('Lihat_jalan',$data);
        	}
 
@@ -43,15 +43,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         if ( ! $this->upload->do_upload('document')) {
 
-                $this->session->set_flashdata('pesan', '
-                <div class="alert alert-danger fade in">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Gagal!</strong> Gambar Terlalu Besar.
-                </div>');
-                echo "filenya";
-                //redirect('tambah_jalan');
+                $this->upload();
+                $this->tambah_gagal();
+                redirect('tambah_jalan');
         }else {
-              $cek=$this->M_jalan->tambah_jalan($new_name);
+              $cek=$this->M_Jalan->tambah_jalan($new_name);
               if($cek){
                 $this->tambah_berhasil();
                 redirect('tambah_jalan');
@@ -60,6 +56,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 redirect('tambah_jalan');
               }
         }
+      }
+
+      public function proses_hapus_jalan(){
+          $id=$_GET ['id'];
+          $cek= $this->M_Jalan->proses_hapus_jalan($id);
+          if($cek){
+            $this->tambah_berhasil();
+            redirect('tambah_jalan_rusak');
+          }else{
+            $this->tambah_gagal();
+            redirect('tambah_jalan_rusak');
+          }
       }
 
       function tambah_berhasil(){
@@ -104,6 +112,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   							<strong>Gagal!</strong> Data Gagal Di Hapus!.
   							</div>');
   		}
+      function upload(){
+  			$this->session->set_flashdata('pesan', '
+  							<div class="alert alert-danger fade in">
+  							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  							<strong>Gagal!</strong> File Upload Tidak Sesuai!.
+  							</div>');
+  		}
+
 
    }
 ?>

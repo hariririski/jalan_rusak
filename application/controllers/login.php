@@ -55,7 +55,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('admin',$username);
 			$data="document.getElementById('exampleTopFullWidth').click();";
 			$this->session->set_flashdata('pesan', 'onload="'.$data.'"');
-			redirect('home_admin');
+			redirect('home');
 
 		}else{
 			$data="document.getElementById('exampleTopFullWidth').click();";

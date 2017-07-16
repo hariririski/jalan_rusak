@@ -38,16 +38,35 @@ class M_Jalan_rusak extends CI_Model{
       return $cek;
     }
 
+    function jumlah_ringan()
+    {
+        $query=$this->db->query("SELECT COUNT(kode_jalan_rusak) AS jumlah_ringan FROM `jalan_rusak` WHERE perbaikan IS NULL and kondisi='1'");
+        return $query->result();
+    }
+
+    function jumlah_berat()
+    {
+        $query=$this->db->query("SELECT COUNT(kode_jalan_rusak) AS jumlah_berat FROM `jalan_rusak` WHERE perbaikan IS NULL and kondisi='2'");
+        return $query->result();
+    }
+
+    function jumlah_belum_tembus()
+    {
+        $query=$this->db->query("SELECT COUNT(kode_jalan_rusak) AS jumlah_belum_tembus FROM `jalan_rusak` WHERE perbaikan IS NULL and kondisi='3'");
+        return $query->result();
+    }
+
     function edit_jalan_rusak()
     {
         $query=$this->db->query("");
         return $query->result();
     }
 
-    function hapus_jalan_rusak()
+    function proses_hapus_jalan_rusak($id)
     {
-        $query=$this->db->query("");
-        return $query->result();
+        $query=$this->db->where('kode_jalan_rusak', $id);
+        $cek=$this->db->delete('jalan_rusak');
+        return $cek;
     }
 
     function detail_jalan_rusak()

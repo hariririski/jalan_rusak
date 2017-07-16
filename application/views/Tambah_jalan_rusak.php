@@ -46,7 +46,7 @@
    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
-    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
   <script>
   Breakpoints();
   </script>

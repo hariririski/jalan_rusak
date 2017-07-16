@@ -62,41 +62,80 @@
           </div>
           <!-- End Widget Linearea One -->
         </div>
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-4 col-sm-12">
           <!-- Widget Linearea One-->
           <div class="widget widget-shadow" id="widgetLineareaOne">
             <div class="widget-content">
               <div class="padding-20 padding-top-10">
                 <div class="clearfix">
                   <div class="grey-800 pull-left padding-vertical-10">
-                    <i class="icon md-account grey-600 font-size-24 vertical-align-bottom margin-right-5"></i>                    User
+                    <i class="icon md-account grey-600 font-size-24 vertical-align-bottom margin-right-5"></i>Total Jalan Rusak Ringan
                   </div>
-                  <span class="pull-right grey-700 font-size-30">1,253</span>
+                    <span class=" pull-right grey-700 font-size-30">
+                      <?php
+                         foreach($ringan as $ringan){
+                           echo $ringan->jumlah_ringan;
+                         }
+                       ?>
+                    </span>
                 </div>
                 <div class="margin-bottom-20 grey-500">
-                  <i class="icon md-long-arrow-up green-500 font-size-16"></i>                  15% From this yesterday
+                  <center>  <img src="<?php echo site_url(); ?>assets/image/rusak_ringan.png"><center>
                 </div>
-                <div class="ct-chart height-50"></div>
+
               </div>
             </div>
           </div>
           <!-- End Widget Linearea One -->
         </div>
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-4 col-sm-12">
           <!-- Widget Linearea One-->
           <div class="widget widget-shadow" id="widgetLineareaOne">
             <div class="widget-content">
               <div class="padding-20 padding-top-10">
                 <div class="clearfix">
                   <div class="grey-800 pull-left padding-vertical-10">
-                    <i class="icon md-account grey-600 font-size-24 vertical-align-bottom margin-right-5"></i>                    User
+                    <i class="icon md-account grey-600 font-size-24 vertical-align-bottom margin-right-5"></i>Total Jalan Rusak Berat
                   </div>
-                  <span class="pull-right grey-700 font-size-30">1,253</span>
+                    <span class=" pull-right grey-700 font-size-30">
+                      <?php
+                         foreach($berat as $berat){
+                           echo $berat->jumlah_berat;
+                         }
+                       ?>
+                    </span>
                 </div>
                 <div class="margin-bottom-20 grey-500">
-                  <i class="icon md-long-arrow-up green-500 font-size-16"></i>                  15% From this yesterday
+              <center>  <img src="<?php echo site_url(); ?>assets/image/rusak_berat.png"><center>
                 </div>
-                <div class="ct-chart height-50"></div>
+
+              </div>
+            </div>
+          </div>
+          <!-- End Widget Linearea One -->
+        </div>
+
+        <div class="col-lg-4 col-sm-12">
+          <!-- Widget Linearea One-->
+          <div class="widget widget-shadow" id="widgetLineareaOne">
+            <div class="widget-content">
+              <div class="padding-20 padding-top-10">
+                <div class="clearfix">
+                  <div class="grey-800 pull-left padding-vertical-10">
+                    <i class="icon md-account grey-600 font-size-24 vertical-align-bottom margin-right-5"></i>Total Jalan Belum Tembus
+                  </div>
+                  <span class=" pull-right grey-700 font-size-30">
+                    <?php
+                       foreach($belum_tembus as $belum_tembus){
+                         echo $belum_tembus->jumlah_belum_tembus;
+                       }
+                     ?>
+                  </span>
+                </div>
+                <div class="margin-bottom-20 grey-500">
+                  <center>  <img src="<?php echo site_url(); ?>assets/image/belum_tembus.png"><center>
+                </div>
+
               </div>
             </div>
           </div>

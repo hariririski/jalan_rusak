@@ -55,6 +55,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
              }
        }
      }
+
+     public function proses_hapus_jalan_rusak(){
+         $id=$_GET ['id'];
+         $cek= $this->M_Jalan_rusak->proses_hapus_jalan_rusak($id);
+         if($cek){
+           $this->tambah_berhasil();
+           redirect('tambah_jalan_rusak');
+         }else{
+           $this->tambah_gagal();
+           redirect('tambah_jalan_rusak');
+         }
+     }
+
+
      function tambah_berhasil(){
       $this->session->set_flashdata('pesan', '
               <div class="alert alert-success fade in">

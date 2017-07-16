@@ -45,10 +45,11 @@ class M_Jalan extends CI_Model{
         return $query->result();
     }
 
-    function hapus_jalan()
+    function proses_hapus_jalan($id)
     {
-        $query=$this->db->query("");
-        return $query->result();
+
+        $query=$this->db->query("DELETE jalan.*, fungsi.* from jalan, fungsi WHERE jalan.kode_ruas='$id' and fungsi.kode_ruas='$id'");
+        return $query;
     }
 
     function detail_jalan()

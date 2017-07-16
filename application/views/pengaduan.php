@@ -108,11 +108,11 @@
                     ?>
                   </td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."edit_kabupaten?id=$data_jalan->id_kabupaten' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
-                    \" title='Hapus'><button type='button' class='btn btn-warning'>Edit</button></a>
+                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan'>
+                  <button type='button' class='btn btn-success'>Detail</button></a>
                     </td>";
                   ?>
-                  
+
                 </tr>
               <?php
                }
