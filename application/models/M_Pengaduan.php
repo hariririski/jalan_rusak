@@ -6,6 +6,13 @@ class M_Pengaduan extends CI_Model{
         return $query->result();
     }
 
+    function pengaduan($id)
+    {
+        $query=$this->db->query("SELECT * FROM `pengaduan` LEFT JOIN kabupaten ON kabupaten.id_kabupaten=pengaduan.id_kabupaten LEFT JOIN kecamatan ON kecamatan.id_kecamatan=pengaduan.id_kecamatan where pengaduan.kode_pengaduan='$id'");
+        return $query->result();
+    }
+
+
     function tambah_pengaduan($new_name)
     {
       $photo= $new_name;

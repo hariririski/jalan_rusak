@@ -68,6 +68,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          }
      }
 
+     public function detail_jalan_rusak(){
+         $id=$_GET['id'];
+         $data['lihat'] = $this->M_Jalan_rusak->jalan_rusak($id);
+         $data['kabupaten'] = $this->M_Kabupaten->lihat_kabupaten();
+         $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
+         $data['jalan'] = $this->M_Jalan->lihat_jalan();
+         $this->load->view('detail_jalan_rusak',$data);
+     }
+
 
      function tambah_berhasil(){
       $this->session->set_flashdata('pesan', '

@@ -108,7 +108,7 @@
                     ?>
                   </td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan'>
+                  echo"<td class='center' width='10%'><a href='". site_url()."detail_pengaduan?id=".$data_jalan->kode_pengaduan."'>
                   <button type='button' class='btn btn-success'>Detail</button></a>
                     </td>";
                   ?>

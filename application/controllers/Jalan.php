@@ -38,6 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         //$config['max_width']     = 10240;
         //$config['max_height']    = 7680;
         $new_name ="JALAN".time().$_FILES["document"] ['name'];
+        $new_name=str_replace(" ","_",$new_name);
         $config['file_name']=$new_name;
         $this->load->library('upload', $config);
 
@@ -69,6 +70,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             redirect('tambah_jalan_rusak');
           }
       }
+
+      public function detail_jalan()
+     {
+       $id=$_GET['id'];
+       $data['lihat'] = $this->M_Jalan->jalan($id);
+       $data['kabupaten'] = $this->M_Kabupaten->lihat_kabupaten();
+       $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
+       $this->load->view('detail_jalan',$data);
+     }
 
       function tambah_berhasil(){
   			$this->session->set_flashdata('pesan', '

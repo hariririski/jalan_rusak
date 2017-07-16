@@ -101,7 +101,7 @@
                   <td><?php echo $data_jalan->nama_kecamatan; ?></td>
 
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan'>
+                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan?id=".$data_jalan->kode_ruas."'>
                   <button type='button' class='btn btn-success'>Detail</button></a>
                     </td>";
                   ?>

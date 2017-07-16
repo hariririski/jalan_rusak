@@ -127,7 +127,7 @@
                     ?>
                   </td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan_rusak'>
+                  echo"<td class='center' width='10%'><a href='". site_url()."detail_jalan_rusak?id=".$data_jalan->kode_jalan_rusak."'>
                   <button type='button' class='btn btn-success'>Detail</button></a>
                     </td>";
                   ?>

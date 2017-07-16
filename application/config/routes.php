@@ -59,6 +59,7 @@ $route['popup'] = 'Peta/popup';
 /*-----------------------------------------------------------------------*/
 $route['pengaduan'] = 'Pengaduan';
 $route['tambah_pengaduan'] = 'Pengaduan/tambah_pengaduan';
+$route['detail_pengaduan'] = 'Pengaduan/detail_pengaduan';
 
 /*-----------------------------------------------------------------------*/
 $route['kabupaten'] = 'Kabupaten';
@@ -78,6 +79,8 @@ $route['detail_jalan'] = 'Jalan/detail_jalan';
 
 /*-----------------------------------------------------------------------*/
 $route['tambah_jalan_rusak'] = 'Jalan_rusak/tambah_jalan_rusak';
+$route['jalan_rusak'] = 'Jalan_rusak';
+$route['detail_jalan_rusak'] = 'Jalan_rusak/detail_jalan_rusak';
 
 
 /*-----------------------------------------------------------------------*/
