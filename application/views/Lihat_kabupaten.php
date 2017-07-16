@@ -44,13 +44,8 @@
   Breakpoints();
   </script>
 </head>
-<body class="site-navbar-small " <?php echo $this->session->flashdata('pesan')?>>
-  <div class="toast-example" id="berhasil" aria-live="polite" data-plugin="toastr" data-message="<strong>Selamat !</strong> Anda Berhasil Menambahkan Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-success toast-shadow" role="alert"></div>
-  <div class="toast-example" id="gagal" aria-live="polite" data-plugin="toastr" data-message="<strong>Maaf !</strong> Anda Gagal Menambahkan Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-error toast-shadow" role="alert"></div>
-  <div class="toast-example" id="berhasil_hapus" aria-live="polite" data-plugin="toastr" data-message="<strong>Selamat !</strong> Anda Berhasil Menghapus Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-success toast-shadow" role="alert"></div>
-  <div class="toast-example" id="gagal_hapus" aria-live="polite" data-plugin="toastr" data-message="<strong>Maaf !</strong> Anda Gagal Menghapus Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-error toast-shadow" role="alert"></div>
-
-
+<body class="site-navbar-small " >
+  <?php echo $this->session->flashdata('pesan')?>
 <?php echo $this->load->view('common/menu', '', TRUE);?>
 
 
@@ -126,7 +121,7 @@
                   <td><?php echo $i; ?></td>
                   <td><?php echo $data_kabupaten->nama_kabupaten; ?></td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."edit_kabupaten?id=$data_kabupaten->id_kabupaten' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
+                  echo"<td class='center' width='10%'><a href='". site_url()."ubah_kabupaten?id=$data_kabupaten->id_kabupaten' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-warning'>Edit</button></a>
                     </td>";
                   ?>

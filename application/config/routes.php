@@ -64,12 +64,12 @@ $route['detail_pengaduan'] = 'Pengaduan/detail_pengaduan';
 /*-----------------------------------------------------------------------*/
 $route['kabupaten'] = 'Kabupaten';
 $route['tambah_kabupaten'] = 'Kabupaten/tambah_kabupaten';
-$route['edit_kabupaten'] = 'Kabupaten/edit_kabupaten';
+$route['ubah_kabupaten'] = 'Kabupaten/ubah_kabupaten';
 
 /*-----------------------------------------------------------------------*/
 $route['kecamatan'] = 'Kecamatan';
 $route['tambah_kecamatan'] = 'Kecamatan/tambah_kecamatan';
-$route['edit_kecamatan'] = 'Kecamatan/edit_kecamatan';
+$route['ubah_kecamatan'] = 'Kecamatan/ubah_kecamatan';
 
 /*-----------------------------------------------------------------------*/
 $route['jalan'] = 'Jalan';
@@ -81,6 +81,7 @@ $route['detail_jalan'] = 'Jalan/detail_jalan';
 $route['tambah_jalan_rusak'] = 'Jalan_rusak/tambah_jalan_rusak';
 $route['jalan_rusak'] = 'Jalan_rusak';
 $route['detail_jalan_rusak'] = 'Jalan_rusak/detail_jalan_rusak';
+$route['edit_jalan_rusak'] = 'Jalan_rusak/edit_jalan_rusak';
 
 
 /*-----------------------------------------------------------------------*/

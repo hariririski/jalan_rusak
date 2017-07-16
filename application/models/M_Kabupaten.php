@@ -6,6 +6,11 @@ class M_Kabupaten extends CI_Model{
         return $query->result();
     }
 
+    function kabupaten($id)
+    {
+        $query=$this->db->query("SELECT * FROM `kabupaten`where id_kabupaten='$id'");
+        return $query->result();
+    }
     function tambah_kabupaten()
     {
       $nama_kabupaten = $this->input->post('nama_kabupaten');

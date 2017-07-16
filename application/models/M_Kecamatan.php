@@ -6,6 +6,12 @@ class M_Kecamatan extends CI_Model{
         return $query->result();
     }
 
+    function kecamatan($id)
+    {
+        $query=$this->db->query("SELECT * FROM `kecamatan` left join kabupaten on kecamatan.id_kabupaten=kabupaten.id_kabupaten where kecamatan.id_kecamatan='$id'");
+        return $query->result();
+    }
+
     function tambah_kecamatan()
     {
       $nama_kecamatan = $this->input->post('nama_kecamatan');

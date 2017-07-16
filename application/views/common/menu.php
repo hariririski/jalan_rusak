@@ -51,10 +51,10 @@
              if(empty($admin)==0){
             ?>
               <li role="presentation">
-                <a href="javascript:void(0)" role="menuitem"><i class="icon md-account" aria-hidden="true"></i> Profile</a>
+                <a href="<?php echo site_url(); ?>ubah_profil?id=<?php echo $admin ?>" role="menuitem"><i class="icon md-account" aria-hidden="true"></i> Profile</a>
               </li>
               <li role="presentation">
-                <a href="javascript:void(0)" role="menuitem"><i class="icon md-card" aria-hidden="true"></i> Ubah Password</a>
+                <a href="<?php echo site_url(); ?>ubah_password?id=<?php echo $admin ?>" role="menuitem"><i class="icon md-card" aria-hidden="true"></i> Ubah Password</a>
               </li>
               <li class="divider" role="presentation"></li>
             <?php } ?>

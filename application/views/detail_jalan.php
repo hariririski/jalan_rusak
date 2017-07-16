@@ -263,7 +263,12 @@
 
                 </div>
                 <div class="form-group form-material col-lg-12 text-right padding-top-m">
-
+                  <?php echo"
+                  <center>
+                  <a href='". site_url()."edit_jalan?id=$data_jalan->kode_ruas' onclick=\"return confirm('Apakah Anda Yakin Untuk Mengubah Data Jalan ?')
+                      \" title='Hapus'><button type='button' class='btn btn-warning'>Edit Jalan</button></a>
+                  <center>
+                    ";?>
                 </div>
               </div>
             </form>

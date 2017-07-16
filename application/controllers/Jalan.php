@@ -79,6 +79,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
        $this->load->view('detail_jalan',$data);
      }
+     public function edit_jalan()
+    {
+      $id=$_GET['id'];
+      $data['lihat'] = $this->M_Jalan->jalan($id);
+      $data['kabupaten'] = $this->M_Kabupaten->lihat_kabupaten();
+      $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
+      $this->load->view('edit_jalan',$data);
+    }
 
       function tambah_berhasil(){
   			$this->session->set_flashdata('pesan', '

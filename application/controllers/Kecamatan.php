@@ -26,12 +26,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function proses_tambah_kecamatan(){
           $cek= $this->M_Kecamatan->tambah_kecamatan();
           if($cek){
-            $data="document.getElementById('berhasil').click();";
-            $this->session->set_flashdata('pesan', 'onload="'.$data.'"');
+            $this->tambah_berhasil();
             redirect('kecamatan');
           }else{
-            $data="document.getElementById('gagal').click();";
-            $this->session->set_flashdata('pesan', 'onload="'.$data.'"');
+            $this->tambah_gagal();
             redirect('kecamatan');
           }
         }
@@ -40,15 +38,73 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           	$id=$_GET ['id'];
           	$cek= $this->M_Kecamatan->proses_hapus_kecamatan($id);
             if($cek){
-          		$data="document.getElementById('berhasil_hapus').click();";
-          		$this->session->set_flashdata('pesan', 'onload="'.$data.'"');
-          		redirect('kecamatan');
-          	}else{
-          		$data="document.getElementById('gagal_hapus').click();";
-          		$this->session->set_flashdata('pesan', 'onload="'.$data.'"');
-          		redirect('kecamatan');
-          	}
+              $this->hapus_berhasil();
+              redirect('kecamatan');
+            }else{
+              $this->hapus_gagal();
+              redirect('kecamatan');
+            }
         }
+
+        public function ubah_kecamatan()
+       {
+         $id=$_GET['id'];
+         $data['select'] = $this->M_Kabupaten->lihat_kabupaten();
+         $data['lihat'] = $this->M_Kecamatan->kecamatan($id);
+         $this->load->view('edit_kecamatan',$data);
+       }
+
+
+       function tambah_berhasil(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-success fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Berhasil!</strong> Data Berhasil Di Tambahkan!.
+                </div>');
+      }
+      function tambah_gagal(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Gagal!</strong> Data Gagal ditambahkan!.
+                </div>');
+      }
+      function edit_berhasil(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-success fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Berhasil!</strong> Data Berhasil Di Perbaharui!.
+                </div>');
+      }
+      function edit_gagal(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Gagal!</strong> Data Gagal Di Perbaharui!.
+                </div>');
+      }
+      function hapus_berhasil(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-success fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Berhasil!</strong> Data Berhasil Dihapus!.
+                </div>');
+      }
+      function hapus_gagal(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Gagal!</strong> Data Gagal Di Hapus!.
+                </div>');
+      }
+       function upload(){
+        $this->session->set_flashdata('pesan', '
+                <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Gagal!</strong> File Upload Tidak Sesuai!.
+                </div>');
+      }
+
 
 
    }

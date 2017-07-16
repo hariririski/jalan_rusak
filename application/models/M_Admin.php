@@ -6,6 +6,12 @@ class M_Admin extends CI_Model{
         return $query->result();
     }
 
+    function admin($id)
+    {
+        $query=$this->db->query("SELECT * FROM `admin` where username='$id'");
+        return $query->result();
+    }
+
     function tambah_admin()
     {
       $nama_lengkap = $this->input->post('nama_lengkap');

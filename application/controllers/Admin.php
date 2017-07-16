@@ -47,6 +47,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	}
       }
 
+      public function ubah_profil(){
+        	$id=$_GET ['id'];
+          $data['lihat'] = $this->M_Admin->admin($id);
+         	$this->load->view('edit_profil',$data);
+      }
+      public function ubah_password(){
+          $id=$_GET ['id'];
+          $data['lihat'] = $this->M_Admin->admin($id);
+          $this->load->view('edit_password',$data);
+      }
+
 
    }
 ?>

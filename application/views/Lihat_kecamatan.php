@@ -10,26 +10,43 @@
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap-extend.min.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/css/site.min.css">
-  <!-- Plugins -->
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/animsition/animsition.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/intro-js/introjs.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/slidepanel/slidePanel.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/flag-icon-css/flag-icon.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/waves/waves.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/examples/css/tables/datatable.css">
-  <!-- Fonts -->
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/font-awesome/font-awesome.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/material-design/material-design.min.css">
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/brand-icons/brand-icons.min.css">
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap-extend.min.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/css/site.min.css">
+   <!-- Plugins -->
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/animsition/animsition.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/intro-js/introjs.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/slidepanel/slidePanel.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/flag-icon-css/flag-icon.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/waves/waves.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/select2/select2.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-select/bootstrap-select.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/icheck/icheck.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asrange/asRange.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asspinner/asSpinner.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/clockpicker/clockpicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/ascolorpicker/asColorPicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-touchspin/bootstrap-touchspin.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/card/card.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/jquery-labelauty/jquery-labelauty.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/bootstrap-maxlength/bootstrap-maxlength.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/jt-timepicker/jquery-timepicker.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/jquery-strength/jquery-strength.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/multi-select/multi-select.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/typeahead-js/typeahead.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/examples/css/forms/advanced.css">
+   <!-- Fonts -->
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/material-design/material-design.min.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/fonts/brand-icons/brand-icons.min.css">
+   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
+    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
   <!--[if lt IE 9]>
     <script src="<?php echo site_url(); ?>assets/global/vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
@@ -44,12 +61,8 @@
   Breakpoints();
   </script>
 </head>
-<body class="site-navbar-small " <?php echo $this->session->flashdata('pesan')?>>
-  <div class="toast-example" id="berhasil" aria-live="polite" data-plugin="toastr" data-message="<strong>Selamat !</strong> Anda Berhasil Menambahkan Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-success toast-shadow" role="alert"></div>
-  <div class="toast-example" id="gagal" aria-live="polite" data-plugin="toastr" data-message="<strong>Maaf !</strong> Anda Gagal Menambahkan Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-error toast-shadow" role="alert"></div>
-  <div class="toast-example" id="berhasil_hapus" aria-live="polite" data-plugin="toastr" data-message="<strong>Selamat !</strong> Anda Berhasil Menghapus Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-success toast-shadow" role="alert"></div>
-  <div class="toast-example" id="gagal_hapus" aria-live="polite" data-plugin="toastr" data-message="<strong>Maaf !</strong> Anda Gagal Menghapus Data." data-container-id="toast-top-right" data-position-class="toast-bottom-right" data-icon-class="toast-just-text toast-error toast-shadow" role="alert"></div>
-
+<body class="site-navbar-small ">
+<?php echo $this->session->flashdata('pesan')?>
 
 <?php echo $this->load->view('common/menu', '', TRUE);?>
 
@@ -73,20 +86,22 @@
 
                 <div class="example">
                   <form class="form-horizontal" action="kecamatan/proses_tambah_kecamatan" method="post">
-                    <div class="form-group form-material">
-                      <label class="col-sm-4 control-label">Nama Kabupaten</label>
-                      <div class="col-sm-8">
-                        <select class="form-control input-sm" required name="id_kabupaten">
-                          <<option value="">Pilih Kabupaten</option>>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-4  control-label">Kabupaten
+                        <span class="required">*</span>
+                      </label>
+                      <div class="col-lg-8 ">
+                        <select class="form-control select2-hidden-accessible" name="id_kabupaten" required data-plugin="select2" data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                            <option value="">Pilih</option>
                           <?php
                              $i=0;
-                             foreach($select as $data_kabupaten){
+                             foreach($select as $kabupaten){
                              $i++;
                            ?>
-                          <option value="<?php echo $data_kabupaten->id_kabupaten; ?>"><?php echo $data_kabupaten->nama_kabupaten; ?></option>
+                          <option value="<?php echo $kabupaten->id_kabupaten; ?>"><?php echo $kabupaten->nama_kabupaten; ?></option>
                           <?php } ?>
                         </select>
-                      </div>
+                      <small class="help-block" data-fv-validator="notEmpty" name="id_kecamatan" data-fv-for="company" data-fv-result="INVALID" style="">Pilih Kabupaten</small></div>
                     </div>
                     <div class="form-group form-material">
                       <label class="col-sm-4 control-label">Nama Kecamatan</label>
@@ -144,7 +159,7 @@
                   <td><?php echo $data_kecamatan->nama_kabupaten; ?></td>
                   <td><?php echo $data_kecamatan->nama_kecamatan; ?></td>
                   <?php
-                  echo"<td class='center' width='10%'><a href='". site_url()."edit_kecamatan?id=$data_kecamatan->id_kecamatan' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
+                  echo"<td class='center' width='10%'><a href='". site_url()."ubah_kecamatan?id=$data_kecamatan->id_kecamatan' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-warning'>Edit</button></a>
                     </td>";
                   ?>
@@ -182,13 +197,32 @@
   <script src="<?php echo site_url(); ?>assets/global/vendor/intro-js/intro.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/screenfull/screenfull.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/slidepanel/jquery-slidePanel.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-tabletools/dataTables.tableTools.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/select2/select2.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-select/bootstrap-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/icheck/icheck.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.min.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/asrange/jquery-asRange.min.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/bootbox/bootbox.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/asspinner/jquery-asSpinner.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/ascolor/jquery-asColor.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/asgradient/jquery-asGradient.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-knob/jquery.knob.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/card/jquery.card.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jt-timepicker/jquery.timepicker.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datepair-js/datepair.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datepair-js/jquery.datepair.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-strength/jquery-strength.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/multi-select/jquery.multi-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/typeahead-js/bloodhound.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
   <!-- Scripts -->
   <script src="<?php echo site_url(); ?>assets/global/js/core.js"></script>
   <script src="<?php echo site_url(); ?>assets/assets/js/site.js"></script>
@@ -202,9 +236,28 @@
   <script src="<?php echo site_url(); ?>assets/global/js/components/slidepanel.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/switchery.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/tabs.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/js/components/datatables.js"></script>
-  <script src="<?php echo site_url(); ?>assets/assets/examples/js/tables/datatable.js"></script>
-  <script src="<?php echo site_url(); ?>assets/assets/examples/js/uikit/icon.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/select2.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-tokenfield.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-tagsinput.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/icheck.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/switchery.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/asrange.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/asspinner.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/clockpicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/ascolorpicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-maxlength.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-knob.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-touchspin.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/card.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-labelauty.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/bootstrap-datepicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jt-timepicker.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/datepair-js.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-strength.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/multi-select.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/jquery-placeholder.js"></script>
+  <script src="<?php echo site_url(); ?>assets/assets/examples/js/forms/advanced.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/toastr.js"></script>
 </body>

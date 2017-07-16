@@ -292,8 +292,12 @@
               </div>
                 <br>
                 <?php echo"
-                <center><a href='". site_url()."Jalan/proses_hapus_jalan?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Merubah Status Jalan Rusak Menjadi Sudah Di Perbaiki ?')
-                  \" title='Hapus'><button type='button' class='btn btn-success'>Sudah Dilakukan Perbaikan</button></a><center>
+                <center>
+                <a href='". site_url()."Jalan/proses_hapus_jalan?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Merubah Status Jalan Rusak Menjadi Sudah Di Perbaiki ?')
+                  \" title='Hapus'><button type='button' class='btn btn-success'>Sudah Dilakukan Perbaikan</button></a>
+                <a href='". site_url()."edit_jalan_rusak?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Mengubah Data Jalan Rusak ?')
+                    \" title='Hapus'><button type='button' class='btn btn-warning'>Edit Jalan Rusak</button></a>
+                <center>
                   ";?>
             </form>
           </div>
