@@ -21,6 +21,17 @@ class M_Kabupaten extends CI_Model{
       return $cek;
     }
 
+    function ubah_kabupaten($id)
+    {
+      $nama_kabupaten = $this->input->post('nama_kabupaten');
+      $data = array(
+          'nama_kabupaten'=>$nama_kabupaten
+      );
+      $this->db->where('id_kabupaten',$id);
+      $cek=$this->db->update('kabupaten',$data);
+      return $cek;
+    }
+
     function edit_provinsi()
     {
         $query=$this->db->query("");

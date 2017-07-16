@@ -75,7 +75,7 @@
 
                  ?>
                 <div class="example">
-                  <form class="form-horizontal" action="kabupaten/proses_tambah_kabupaten" method="post">
+                  <form class="form-horizontal" action="kabupaten/proses_ubah_kabupaten/<?php echo $kabupaten->id_kabupaten?>" method="post">
                     <div class="form-group form-material">
                       <label class="col-sm-4 control-label">Nama Kabupaten/Kota</label>
                       <div class="col-sm-8">

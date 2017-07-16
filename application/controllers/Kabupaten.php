@@ -44,6 +44,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
         }
 
+        public function proses_ubah_kabupaten($id){
+          $cek= $this->M_Kabupaten->ubah_kabupaten($id);
+          if($cek){
+            $this->edit_berhasil();
+            redirect('kabupaten');
+          }else{
+            $this->edit_gagal();
+            redirect('kabupaten');
+          }
+        }
+
         public function ubah_kabupaten()
        {
          $id=$_GET['id'];

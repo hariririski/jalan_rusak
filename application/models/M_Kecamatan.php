@@ -24,6 +24,19 @@ class M_Kecamatan extends CI_Model{
       return $cek;
     }
 
+    function ubah_kecamatan($id)
+    {
+      $nama_kecamatan = $this->input->post('nama_kecamatan');
+      $id_kabupaten = $this->input->post('id_kabupaten');
+      $data = array(
+          'id_kabupaten'=>$id_kabupaten,
+          'nama_kecamatan'=>$nama_kecamatan
+      );
+      $this->db->where('id_kecamatan',$id);
+      $cek=$this->db->update('kecamatan',$data);
+      return $cek;
+    }
+
     function edit_kecamatan()
     {
         $query=$this->db->query("");

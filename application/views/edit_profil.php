@@ -74,7 +74,7 @@
                    foreach($lihat as $admin){
                  ?>
                 <div class="example">
-                  <form class="form-horizontal" action="admin/proses_tambah_admin" method="post">
+                  <form class="form-horizontal" action="admin/proses_ubah_profil/<?php echo $admin->username?>" method="post">
                     <div class="form-group form-material">
                       <label class="col-sm-3 control-label">Nama Lengkap</label>
                       <div class="col-sm-9">
@@ -90,7 +90,7 @@
                     <div class="form-group form-material">
                       <label class="col-sm-3 control-label">Password</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="password" placeholder="Password" autocomplete="off" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off" required>
                       </div>
                     </div>
                     <?php

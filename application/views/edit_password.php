@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Edit Profile</title>
+  <title>Edit Password</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -74,29 +74,35 @@
                    foreach($lihat as $admin){
                  ?>
                 <div class="example">
-                  <form class="form-horizontal" action="admin/proses_tambah_admin" method="post">
+                  <form class="form-horizontal" action="admin/proses_ubah_password/<?php echo $admin->username?>" method="post">
                     <div class="form-group form-material">
                       <label class="col-sm-3 control-label">Nama Lengkap</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="nama_lengkap" value="<?php echo $admin->nama_lengkap?>" placeholder="Full Name" autocomplete="off" required>
+                        <input type="text" class="form-control" name="nama_lengkap" readonly value="<?php echo $admin->nama_lengkap?>" placeholder="Full Name" autocomplete="off" required>
                       </div>
                     </div>
                     <div class="form-group form-material">
                       <label class="col-sm-3 control-label">Username</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="username" value="<?php echo $admin->username ?>" placeholder="Username" autocomplete="off" required>
+                        <input type="text" class="form-control" name="username" readonly value="<?php echo $admin->username ?>" placeholder="Username" autocomplete="off" required>
                       </div>
                     </div>
                     <div class="form-group form-material">
-                      <label class="col-sm-3 control-label">Password</label>
+                      <label class="col-sm-3 control-label">Password Lama</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="password" placeholder="Password" autocomplete="off" required>
+                        <input type="password" class="form-control" name="password_lama" placeholder="Password" autocomplete="off" required>
                       </div>
                     </div>
                     <div class="form-group form-material">
                       <label class="col-sm-3 control-label">Ulangi Password</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="password" placeholder="ulangi Password" autocomplete="off" required>
+                        <input type="password" class="form-control" name="password_baru" placeholder="ulangi Password" autocomplete="off" required>
+                      </div>
+                    </div>
+                    <div class="form-group form-material">
+                      <label class="col-sm-3 control-label">Ulangi Password</label>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control" name="ulangi_password" placeholder="ulangi Password" autocomplete="off" required>
                       </div>
                     </div>
                     <?php

@@ -54,6 +54,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $this->load->view('edit_kecamatan',$data);
        }
 
+       public function proses_ubah_kecamatan($id){
+         $cek= $this->M_Kecamatan->ubah_kecamatan($id);
+         if($cek){
+           $this->edit_berhasil();
+           redirect('kecamatan');
+         }else{
+           $this->edit_gagal();
+           redirect('kecamatan');
+         }
+       }
+
 
        function tambah_berhasil(){
         $this->session->set_flashdata('pesan', '
