@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2017 at 07:30 PM
+-- Generation Time: Jul 17, 2017 at 09:36 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`nama_lengkap`, `password`, `username`, `terakhir_login`) VALUES
-('Hariririski', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2017-07-03 03:05:34');
+('Ibnu', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2017-07-16 14:57:44');
 
 -- --------------------------------------------------------
 
@@ -91,8 +91,8 @@ CREATE TABLE `jalan` (
 --
 
 INSERT INTO `jalan` (`kode_ruas`, `dari`, `ke`, `no_ruas`, `status`, `dokument`, `rusak_ringan`, `rusak_sedang`, `rusak_berat`, `baik`, `panjang_km`, `id_kecamatan`, `id_kabupaten`, `nama_jalan`, `belum_tembus`) VALUES
-(1, 1, 1, 1, '1', 'JALAN1500044787Presentation1.pdf', 1, 1, 1, 1, 1, 1, 31, '1', 1),
-(2, 2, 22, 2, '2', 'JALAN1500044841SKPL.pdf', 2, 22, 2, 2, 2, 1, 31, '2', 2);
+(1, 1, 1, 1, '1', 'JALAN1500201136Final_RPL_Pak_Rahmat.docx', 1, 1, 1, 1, 1, 1, 32, '1', 1),
+(2, 2, 2, 2, '2', 'JALAN1500205560SKPL.pdf', 2, 2, 2, 2, 2, 1, 31, '2', 22);
 
 -- --------------------------------------------------------
 
@@ -113,15 +113,16 @@ CREATE TABLE `jalan_rusak` (
   `luas_jalan` int(50) NOT NULL,
   `photo` varchar(255) NOT NULL,
   `tgl_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` int(2) NOT NULL
+  `status` int(2) NOT NULL,
+  `perbaikan` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jalan_rusak`
 --
 
-INSERT INTO `jalan_rusak` (`kode_ruas`, `id_kabupaten`, `id_kecamatan`, `kode_jalan_rusak`, `kondisi`, `lat`, `lon`, `desa`, `keterangan`, `luas_jalan`, `photo`, `tgl_create`, `status`) VALUES
-(2, 32, 1, 1, 2, '4.569069', '96.67466100000001', 'qq', '1', 1, 'JALAN1500050575logout.png', '2017-07-14 16:42:55', 0);
+INSERT INTO `jalan_rusak` (`kode_ruas`, `id_kabupaten`, `id_kecamatan`, `kode_jalan_rusak`, `kondisi`, `lat`, `lon`, `desa`, `keterangan`, `luas_jalan`, `photo`, `tgl_create`, `status`, `perbaikan`) VALUES
+(1, 31, 1, 4, 3, '5.160191033179967', '95.53208287500001', '1', '1', 1, 'JALAN_RUSAK1500201164rusak_ringan.png', '2017-07-16 10:32:44', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -139,9 +140,29 @@ CREATE TABLE `kabupaten` (
 --
 
 INSERT INTO `kabupaten` (`nama_kabupaten`, `id_kabupaten`) VALUES
-('aaa', 35),
+(' Subulussalam', 52),
+('Aceh Barat', 40),
+('Aceh Barat Daya', 53),
+('Aceh Besar', 44),
+('Aceh Jaya', 54),
+('Aceh Selatan', 39),
+('Aceh Singkil', 45),
+('Aceh Tamiang', 46),
+('Aceh Tengah', 36),
+('Aceh Tenggara', 47),
+('Aceh Timur', 38),
+('Aceh Utara', 58),
 ('Banda Aceh', 31),
-('Sabang', 32);
+('Bener Meriah', 37),
+('Bireuen', 48),
+('Gayo Lues', 55),
+('langsa', 41),
+('Lhokseumawe', 51),
+('Nagan Raya', 56),
+('Pidie', 42),
+('Pidie Jaya', 43),
+('Sabang', 32),
+('Simeulue', 50);
 
 -- --------------------------------------------------------
 
@@ -160,7 +181,11 @@ CREATE TABLE `kecamatan` (
 --
 
 INSERT INTO `kecamatan` (`id_kecamatan`, `nama_kecamatan`, `id_kabupaten`) VALUES
-(1, 'Kuta ALam', 31);
+(1, 'Kuta ALam', 31),
+(2, 'Baiturahman', 31),
+(3, 'Darussalam', 31),
+(4, 'Bandar Baru', 31),
+(5, 'Jaya Baru', 31);
 
 -- --------------------------------------------------------
 
@@ -186,6 +211,13 @@ CREATE TABLE `pengaduan` (
   `no_hp_pelapor` varchar(15) NOT NULL,
   `nama_jalan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengaduan`
+--
+
+INSERT INTO `pengaduan` (`id_kecamatan`, `id_kabupaten`, `kode_pengaduan`, `kondisi`, `lat`, `lon`, `desa`, `keterangan`, `luas_jalan`, `photo`, `tanggal_create`, `nama_pelapor`, `no_ktp_pelapor`, `alamat_pelapor`, `no_hp_pelapor`, `nama_jalan`) VALUES
+(1, 31, 1, 3, 5, 97, '1', '1', 1, 'PENGADUAN1500059276Sekolah.png', '2017-07-14 19:07:56', '1', 11111, '1', '1', '11');
 
 --
 -- Indexes for dumped tables
@@ -228,7 +260,8 @@ ALTER TABLE `kabupaten`
 -- Indexes for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
-  ADD PRIMARY KEY (`id_kecamatan`);
+  ADD PRIMARY KEY (`id_kecamatan`),
+  ADD UNIQUE KEY `nama_kecamatan` (`nama_kecamatan`);
 
 --
 -- Indexes for table `pengaduan`
@@ -251,22 +284,22 @@ ALTER TABLE `fungsi`
 -- AUTO_INCREMENT for table `jalan_rusak`
 --
 ALTER TABLE `jalan_rusak`
-  MODIFY `kode_jalan_rusak` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kode_jalan_rusak` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
-  MODIFY `id_kabupaten` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_kabupaten` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
-  MODIFY `id_kecamatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kecamatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `kode_pengaduan` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_pengaduan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
