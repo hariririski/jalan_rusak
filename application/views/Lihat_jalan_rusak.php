@@ -76,7 +76,12 @@
                 <th>kecamatan</th>
                 <th>Status</th>
                 <th>Detail</th>
+                <?php
+                $admin=$this->session->userdata('admin');
+                 if(empty($admin)==0){
+                ?>
                 <th>Hapus</th>
+                <?php } ?>
               </tr>
             </thead>
             <tfoot>
@@ -89,7 +94,12 @@
                 <th>kecamatan</th>
                 <th>Status</th>
                 <th>Detail</th>
+                <?php
+                $admin=$this->session->userdata('admin');
+                 if(empty($admin)==0){
+                ?>
                 <th>Hapus</th>
+                <?php } ?>
               </tr>
             </tfoot>
             <tbody>
@@ -132,10 +142,16 @@
                     </td>";
                   ?>
                   <?php
+                  $admin=$this->session->userdata('admin');
+                   if(empty($admin)==0){
+                  ?>
+                  <?php
+
                   echo"<td class='center' width='10%'><a href='". site_url()."jalan_rusak/proses_hapus_jalan_rusak?id=$data_jalan->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Menghapus ?')
                     \" title='Hapus'><button type='button' class='btn btn-danger'>Hapus</button></a>
                     </td>";
                   ?>
+                    <?php } ?>
                 </tr>
               <?php
                }
