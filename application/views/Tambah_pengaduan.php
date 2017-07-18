@@ -73,7 +73,7 @@
 
   <div class="page animsition">
     <div class="page-header">
-      <h1 class="page-title">Pelaporan Jalan Rusak</h1>
+      <h1 class="page-title">Pelaporan Jalan Rusak Lintas Provinsi</h1>
 
 
     </div>
@@ -290,7 +290,9 @@
                             <input type="file" name="gambar" multiple="">
                           </span>
                         </span>
+
                       </div>
+                      <label class="col-lg-10 col-sm-3 control-label">Maksimal Ukuran Foto Sebesar 1Mb</label>
                     </div>
                   </div>
 

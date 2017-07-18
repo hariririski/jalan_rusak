@@ -199,7 +199,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="baik" placeholder="Luas Jalan Kondisi Baik" required="" >
+                        <input type="text" class="form-control" name="baik" placeholder="Ruas Jalan Kondisi Baik" required="" >
 
                     </div>
                     </div>
@@ -208,7 +208,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="sedang" placeholder="Luas Jalan Kondisi Sedang" required="" >
+                        <input type="text" class="form-control" name="sedang" placeholder="Ruas Jalan Kondisi Sedang" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -216,7 +216,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Luas Jalan Kondisi Rusak Ringan" required="" >
+                        <input type="text" class="form-control" name="rusak_ringan" placeholder="Ruas Jalan Kondisi Rusak Ringan" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -224,7 +224,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="rusak_berat" placeholder="Luas Jalan Kondisi Rusak Ringan" required="" >
+                        <input type="text" class="form-control" name="rusak_berat" placeholder="Ruas Jalan Kondisi Rusak Ringan" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
@@ -232,7 +232,16 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="belum_tembus" placeholder="Luas Jalan Kondisi Belum Tembus" required="" >
+                        <input type="text" class="form-control" name="belum_tembus" placeholder="Ruas Jalan Kondisi Belum Tembus" required="" >
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">URL File Peta (.KMZ)
+                        <span class="required"></span>
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" name="peta" placeholder="URL Peta" required="" >
+                        <label class="col-lg-10 col-sm-3 control-label">Filenya harus berekstensi kmz
                       </div>
                     </div>
                     <div class="form-group form-material ">

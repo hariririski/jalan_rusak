@@ -53,7 +53,7 @@
 
   <div class="page animsition">
     <div class="page-header">
-      <h1 class="page-title">Data Jalan Rusak</h1>
+      <h1 class="page-title">Data Jalan Rusak Lintas Provinsi</h1>
 
     </div>
     <div class="page-content">

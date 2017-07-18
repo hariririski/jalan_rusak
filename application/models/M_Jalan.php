@@ -31,6 +31,7 @@ class M_Jalan extends CI_Model{
           'rusak_ringan'  =>$this->input->post('rusak_ringan'),
           'rusak_berat'   =>$this->input->post('rusak_berat'),
           'belum_tembus'  =>$this->input->post('belum_tembus'),
+          'peta'  =>$this->input->post('peta'),
           'dokument'      =>$document
       );
       $fungsi = array(

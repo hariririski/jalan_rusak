@@ -1695,7 +1695,7 @@
          $i=0;
          foreach($lihat as $data_jalan_rusak){
        ?>
-                  
+
                   ['<?php echo $data_jalan_rusak->kode_jalan_rusak ?>', <?php echo $data_jalan_rusak->lat ?>,<?php echo $data_jalan_rusak->lon ?>,'<?php echo site_url(); ?>assets/maps/cluster/icon/<?php if($data_jalan_rusak->kondisi==1){echo"ringan.png";}else if($data_jalan_rusak->kondisi==2){echo"berat.png";}else if($data_jalan_rusak->kondisi==3){echo"blm_tembus.png";} ?>'],
       <?php }?>
 
@@ -1746,12 +1746,15 @@
      var markerCluster = new MarkerClusterer(map, markers);
 
   };
+
 function toggleLayers(i)
 {
 
   if(layers[i].getMap()==null) {
-     layers[i].setMap(map);
-
+    if(i==0){
+     layers[1].setMap(map);
+     layers[0].setMap(map);
+   }
   }
   else {
      layers[i].setMap(null);
@@ -1797,12 +1800,9 @@ function toggleLayers(i)
           <tr>
 					<td width='85%'> <input type="checkbox" id="layer_02" onclick="toggleLayers(1);"/> Batas Kabupaten</td>
 					</tr>
-					<!-- <tr>
-					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/> Arah Aliran Air Tanah</td>
+          <tr>
+					<td width='85%'> <input type="checkbox" id="layer_3" onclick="toggleLayers(0);"/> Jalan Provinsi</td>
 					</tr>
-					<tr>
-					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(2);"/> Peta Cekungan Air Tanah</td>
-					</tr> -->
 					</table >
 
           <br>
@@ -1821,12 +1821,6 @@ function toggleLayers(i)
 					<td width='15%'><img src="<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png" width="80%"> </td>
 					<td width='70%%'> Jalan Belum Tembus</td>
 					</tr>
-					<!-- <tr>
-					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/> Arah Aliran Air Tanah</td>
-					</tr>
-					<tr>
-					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(2);"/> Peta Cekungan Air Tanah</td>
-					</tr> -->
 					</table >
 
                 </div>
