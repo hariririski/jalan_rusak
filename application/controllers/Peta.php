@@ -9,11 +9,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   			 $this->load->library('session');
   			 $this->load->database();
          $this->load->model('M_Jalan_rusak');
+         $this->load->model('M_Jalan');
 
   	  }
 
 
       public function index(){
+        $data['jalan'] = $this->M_Jalan->lihat_jalan();
         $data['lihat'] = $this->M_Jalan_rusak->lihat_jalan_rusak_aktif();
        	$this->load->view('maps/peta_jalan_rusak',$data);
       }

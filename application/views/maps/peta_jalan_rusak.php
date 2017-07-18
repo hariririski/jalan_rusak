@@ -1681,10 +1681,19 @@
    MarkerClusterer.IMAGE_SIZES = [53, 56, 66, 78, 90];
 
    var layers=[];
-   layers[0] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/jalan_provinsi.kmz',
+   layers[0] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/batas_kabupaten3.kmz',
    {preserveViewport: true});
-   layers[1] = new  google.maps.KmlLayer('https://github.com/hariririski/jalan_rusak/raw/master/batas_kabupaten3.kmz',
-   {preserveViewport: true});
+
+   <?php
+      $jumlah=1;
+      foreach($jalan as $data_jalan){
+    ?>
+  layers[<?php echo $jumlah;?>] = new  google.maps.KmlLayer('<?php echo $data_jalan->peta;?>',{preserveViewport: true});
+   <?php
+   $jumlah++;
+    }
+      ?>
+
 
    var map;
 
@@ -1751,14 +1760,38 @@ function toggleLayers(i)
 {
 
   if(layers[i].getMap()==null) {
-    if(i==0){
-     layers[1].setMap(map);
-     layers[0].setMap(map);
-   }
+    if(i==1){
+      <?php
+      for($jalan=1; $jalan<$jumlah;$jalan++){
+    ?>
+      layers[<?php echo $jalan?>].setMap(map);
+    <?php
+      }
+    ?>
+
+    }else {
+        layers[i].setMap(map);
+
+    }
+
+
   }
   else {
-     layers[i].setMap(null);
+    if(i==1){
+      <?php
+      for($jalan=1; $jalan<$jumlah;$jalan++){
+    ?>
+      layers[<?php echo $jalan?>].setMap(null);
+    <?php
+      }
+    ?>
+
+    }else {
+        layers[i].setMap(null);
+
+    }
   }
+
   document.getElementById('status').innerHTML += "toggleLayers("+i+") [setMap("+layers[i].getMap()+"] returns status: "+layers[i].getStatus()+"<br>";
 }
 
@@ -1795,14 +1828,12 @@ function toggleLayers(i)
           Layer
 					<table border='0'>
 					<tr>
-					<td width='85%'> <input type="checkbox" id="layer_0" onclick="toggleLayers(0);"/> Jalan Provinsi</td>
+					<td width='85%'> <input type="checkbox" id="layer_0" onclick="toggleLayers(1);"/> Jalan Provinsi</td>
 					</tr>
           <tr>
-					<td width='85%'> <input type="checkbox" id="layer_02" onclick="toggleLayers(1);"/> Batas Kabupaten</td>
+					<td width='85%'> <input type="checkbox" id="layer_02" onclick="toggleLayers(0);"/> Batas Kabupaten</td>
 					</tr>
-          <tr>
-					<td width='85%'> <input type="checkbox" id="layer_3" onclick="toggleLayers(0);"/> Jalan Provinsi</td>
-					</tr>
+
 					</table >
 
           <br>
@@ -1821,6 +1852,12 @@ function toggleLayers(i)
 					<td width='15%'><img src="<?php echo site_url(); ?>assets/maps/cluster/icon/blm_tembus.png" width="80%"> </td>
 					<td width='70%%'> Jalan Belum Tembus</td>
 					</tr>
+					<!-- <tr>
+					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(1);"/> Arah Aliran Air Tanah</td>
+					</tr>
+					<tr>
+					<td width='85%'><input type="checkbox" id="layer_01" onclick="toggleLayers(2);"/> Peta Cekungan Air Tanah</td>
+					</tr> -->
 					</table >
 
                 </div>
