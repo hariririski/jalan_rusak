@@ -60,6 +60,7 @@ $route['popup'] = 'Peta/popup';
 $route['pengaduan'] = 'Pengaduan';
 $route['tambah_pengaduan'] = 'Pengaduan/tambah_pengaduan';
 $route['detail_pengaduan'] = 'Pengaduan/detail_pengaduan';
+$route['verifikasi_pengaduan'] = 'Pengaduan/verifikasi_pengaduan';
 
 /*-----------------------------------------------------------------------*/
 $route['kabupaten'] = 'Kabupaten';

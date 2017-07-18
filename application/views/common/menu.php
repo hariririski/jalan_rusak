@@ -166,21 +166,19 @@
               <span class="site-menu-arrow"></span>
             </a>
             <ul class="site-menu-sub">
-              <?php
-              $admin=$this->session->userdata('admin');
-               if(empty($admin)==0){
-              ?>
+
               <li class="site-menu-item <?php $link=uri_string(); if($link =="pengaduan"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>pengaduan">
                   <span class="site-menu-title">Lihat Pengaduan</span>
                 </a>
               </li>
-              <?php } ?>
+          
               <li class="site-menu-item <?php $link=uri_string(); if($link =="tambah_pengaduan"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>tambah_pengaduan">
                   <span class="site-menu-title">Tambah Pengaduan</span>
                 </a>
               </li>
+
             </ul>
           </li>
           <?php

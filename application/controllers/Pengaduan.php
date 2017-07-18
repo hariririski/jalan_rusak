@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          public function index()
        	{
           $data['lihat'] = $this->M_Pengaduan->lihat_pengaduan();
+          $data['umum'] = $this->M_Pengaduan->lihat_pengaduan_umum();
        		$this->load->view('Pengaduan',$data);
        	}
 
@@ -66,6 +67,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
        $this->load->view('detail_pengaduan',$data);
      }
+     public function verifikasi_pengaduan()
+    {
+      $id=$_GET['id'];
+      $data['lihat'] = $this->M_Pengaduan->pengaduan($id);
+      $data['kabupaten'] = $this->M_Kabupaten->lihat_kabupaten();
+      $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
+      $data['jalan'] = $this->M_Jalan->lihat_jalan();
+      $this->load->view('verifikasi_pengaduan',$data);
+    }
        function tambah_berhasil(){
         $this->session->set_flashdata('pesan', '
                 <div class="alert alert-success fade in">

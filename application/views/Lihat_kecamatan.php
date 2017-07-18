@@ -13,6 +13,10 @@
    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap-extend.min.css">
    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/css/site.min.css">
    <!-- Plugins -->
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.css">
+   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.css">
+   
    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/animsition/animsition.css">
    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.css">
@@ -47,16 +51,6 @@
   <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
     <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.css">
-  <!--[if lt IE 9]>
-    <script src="<?php echo site_url(); ?>assets/global/vendor/html5shiv/html5shiv.min.js"></script>
-    <![endif]-->
-  <!--[if lt IE 10]>
-    <script src="<?php echo site_url(); ?>assets/global/vendor/media-match/media.match.min.js"></script>
-    <script src="<?php echo site_url(); ?>assets/global/vendor/respond/respond.min.js"></script>
-    <![endif]-->
-  <!-- Scripts -->
-  <script src="<?php echo site_url(); ?>assets/global/vendor/modernizr/modernizr.js"></script>
-  <script src="<?php echo site_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
   <script>
   Breakpoints();
   </script>
@@ -193,6 +187,11 @@
   <script src="<?php echo site_url(); ?>assets/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/waves/waves.js"></script>
   <!-- Plugins -->
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-tabletools/dataTables.tableTools.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/switchery/switchery.min.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/intro-js/intro.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/screenfull/screenfull.js"></script>
@@ -260,5 +259,10 @@
   <script src="<?php echo site_url(); ?>assets/assets/examples/js/forms/advanced.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/vendor/toastr/toastr.js"></script>
   <script src="<?php echo site_url(); ?>assets/global/js/components/toastr.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/datatables.js"></script>
+  <script src="<?php echo site_url(); ?>assets/assets/examples/js/tables/datatable.js"></script>
+</body>
+</html>
+
 </body>
 </html>

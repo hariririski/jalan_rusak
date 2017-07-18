@@ -241,6 +241,14 @@
                       </div>
                     </div>
                     <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">URL File Peta (.KMZ)
+                      </label>
+                      <div class=" col-lg-9 col-sm-9">
+                        <input type="text" class="form-control" value="<?php echo $data_jalan->peta?>" name="peta" placeholder="URL Peta"  >
+                        <label class="col-lg-10 col-sm-3 control-label">Filenya harus berekstensi kmz
+                      </div>
+                    </div>
+                    <div class="form-group form-material ">
                       <label class="col-lg-3 col-sm-3 control-label">Upload Dokument
                         <span class="required">*</span>
                       </label>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Detail Pengaduan</title>
+  <title>Verifikasi Pengaduan</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -136,7 +136,7 @@
                       </label>
                       <div class="col-lg-9 col-sm-9">
                         <select class="form-control select2-hidden-accessible" name="id_kabupaten" required data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                          <option value=""><?php echo $pengaduan->nama_kabupaten?></option>
+                          <option value="<?php echo $pengaduan->id_kabupaten?>"><?php echo $pengaduan->nama_kabupaten?></option>
                         <?php
 
                            foreach($kabupaten as $kabupaten){
@@ -153,7 +153,7 @@
                       </label>
                       <div class="col-lg-9 col-sm-9">
                         <select class="form-control select2-hidden-accessible" name="id_kecamatan" required data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                          <<option value=""><?php echo $pengaduan->nama_kecamatan?></option>
+                          <<option value="<?php echo $pengaduan->id_kecamatan?>"><?php echo $pengaduan->nama_kecamatan?></option>
                           <?php
 
                              foreach($kecamatan as $kecamatan){
@@ -169,14 +169,14 @@
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control"  value="<?php echo $pengaduan->desa?>" readonly name="desa" placeholder="Desa" required="" >
+                        <input type="text" class="form-control"  value="<?php echo $pengaduan->desa?>"  name="desa" placeholder="Desa" required="" >
                       </div>
                     </div>
                   <div class="form-group form-material ">
                     <label class="col-lg-3 col-sm-3 control-label">Keterangan Lokasi jalan Lainnya
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="keterangan"  value="<?php echo $pengaduan->keterangan?>" readonly placeholder="Keterangan" >
+                      <input type="text" class="form-control" name="keterangan"  value="<?php echo $pengaduan->keterangan?>"  placeholder="Keterangan" >
                     </div>
                   </div>
 
@@ -187,6 +187,24 @@
                       <div class=" col-lg-9 col-sm-9">
                         <input type="text" class="form-control" name="nama_jalan" placeholder="Nama Jalan"  value="<?php echo $pengaduan->nama_jalan?>" readonly required="" >
                       </div>
+                    </div>
+
+                    <div class="form-group form-material ">
+                      <label class="col-lg-3 col-sm-3 control-label">Jalan
+                        <span class="required">*</span>
+                      </label>
+                      <div class="col-lg-9 col-sm-9">
+                        <select class="form-control select2-hidden-accessible" required name="kode_ruas" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                          <option value=""></option>
+                          <?php
+
+                             foreach($jalan as $jalan){
+                              if($data_jalan->kode_ruas!=$jalan->kode_ruas){
+                           ?>
+                          <option value="<?php echo $jalan->kode_ruas; ?>"><?php echo $jalan->nama_jalan; ?></option>
+                          <?php } } ?>
+                        </select>
+                      <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Plilh Kecataman</small></div>
                     </div>
                 </div>
                 <div class="col-lg-6 form-horizontal">
@@ -223,7 +241,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="luas_jalan"  value="<?php echo $pengaduan->luas_jalan?>" readonly placeholder="Luas Jalan Rusak" required="" >
+                      <input type="text" class="form-control" name="luas_jalan"  value="<?php echo $pengaduan->luas_jalan?>"  placeholder="Luas Jalan Rusak" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -293,7 +311,7 @@
                     </label>
                     <div class=" col-lg-9 col-sm-9">
                       <div class="input-group input-group-file">
-                        <input type="text" value="<?php echo $pengaduan->photo?>" class="form-control" readonly="">
+                        <input type="text" value="<?php echo $pengaduan->photo?>" class="form-control" >
                         <span class="input-group-btn">
                           <span class="btn btn-primary btn-file waves-effect waves-light">
                             <i class="icon md-upload" aria-hidden="true"></i>
@@ -310,23 +328,10 @@
                 </div>
                 <br>
                 <div class="form-group form-material col-lg-12 text-center padding-top-m">
-                  <?php if($pengaduan->status==0 ){?>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button><a>
-                    <button type="button" disabled class="btn btn-success waves-effect waves-light" >Verfikasi Pengaduan</button>
-                    <button type="button" disabled class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
-                  <?php }else if($pengaduan->status==1){ ?>
-                    <button type="button" disabled class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button"  class="btn btn-success waves-effect waves-light" >Verfikasi Pengaduan</button></a>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button></a>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
-                  <?php }else if($pengaduan->status==2||$pengaduan->status==3){ ?>
-                    <button type="button" disabled class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button><a>
-                    <button type="button" disabled class="btn btn-success waves-effect waves-light" >Verfikasi Pengaduan</button>
-                    <button type="button" disabled class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
-                    <a href=""><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
-                  <?php } ?>
+
+                  <button type="submit" class="btn btn-primary waves-effect waves-light" >Verifikasi</button><a>
+
+
                 </div>
               </div>
             </form>

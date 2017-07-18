@@ -117,15 +117,16 @@
                     <label class="col-lg-3 col-sm-3 control-label">Dari
                       <span class="required">*</span>
                     </label>
-                    <div class=" col-lg-3 col-sm-9">
-                      <input type="text" class="form-control" name="dari" placeholder="Dari" required="" >
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control" name="ke" placeholder="Dari" required="" >
                     </div>
-
-                    <label class="col-lg-2 col-sm-3 control-label">Ke
+                  </div>
+                  <div class="form-group form-material ">
+                    <label class="col-lg-3 col-sm-3 control-label">Ke
                       <span class="required">*</span>
                     </label>
-                    <div class=" col-lg-4 col-sm-9">
-                      <input type="text" class="form-control" name="ke" placeholder="Status" required="" >
+                    <div class=" col-lg-9 col-sm-9">
+                      <input type="text" class="form-control" name="dari" placeholder="Ke" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -237,10 +238,10 @@
                     </div>
                     <div class="form-group form-material ">
                       <label class="col-lg-3 col-sm-3 control-label">URL File Peta (.KMZ)
-                        <span class="required"></span>
+                        
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="peta" placeholder="URL Peta" required="" >
+                        <input type="text" class="form-control" name="peta" placeholder="URL Peta"  >
                         <label class="col-lg-10 col-sm-3 control-label">Filenya harus berekstensi kmz
                       </div>
                     </div>

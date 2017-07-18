@@ -67,34 +67,56 @@
             <thead>
               <tr>
                 <th>NO</th>
+                <th>Tanggal</th>
                 <th>Nama Jalan</th>
                 <th>Kabupaten</th>
                 <th>Kecamatan</th>
                 <th>Kondisi</th>
+                <th>Status</th>
+                <th>Pelapor</th>
+                <?php
+                $admin=$this->session->userdata('admin');
+                 if(empty($admin)==0){
+                ?>
+
                 <th>Detail</th>
+                <?php } ?>
               </tr>
             </thead>
             <tfoot>
               <tr>
                 <th>NO</th>
+                <th>Tanggal</th>
                 <th>Nama Jalan</th>
                 <th>Kabupaten</th>
                 <th>Kecamatan</th>
                 <th>Kondisi</th>
+                <th>Status</th>
+                <th>Pelapor</th>
+                <?php
+                $admin=$this->session->userdata('admin');
+                 if(empty($admin)==0){
+                ?>
+
                 <th>Detail</th>
+                <?php } ?>
               </tr>
             </tfoot>
             <tbody>
               <?php
                  $i=0;
+                 $admin=$this->session->userdata('admin');
+                  if(empty($admin)==0){
                  foreach($lihat as $data_jalan){
-                 $i++;
+                  $i++;
                ?>
                 <tr>
                   <td><?php echo $i; ?></td>
+                  <td><?php echo $data_jalan->tanggal_create; ?></td>
                   <td><?php echo $data_jalan->nama_jalan; ?></td>
                   <td><?php echo $data_jalan->nama_kabupaten; ?></td>
                   <td><?php echo $data_jalan->nama_kecamatan; ?></td>
+
                   <td>
                     <?php
                     if($data_jalan->kondisi==1){
@@ -105,20 +127,90 @@
                       echo '<span class="label label-round label-primary">Belum Tembus</span>';
                     }
 
+
                     ?>
                   </td>
+                  <td>
+                    <?php
+                    if($data_jalan->status==0){
+                      echo '<span class="label label-round label-primary">Belum Diperoses</span>';
+                    }else if($data_jalan->status==1){
+                      echo '<span class="label label-round label-warning">Sedang Diperoses</span>';
+                    }else if($data_jalan->status==2){
+                      echo '<span class="label label-round label-success">Terverifikasi</span>';
+                    }else if($data_jalan->status==3){
+                      echo '<span class="label label-round label-danger">Pengaduan Palsu</span>';
+                    }
+
+
+                    ?>
+
+                  <td><?php echo $data_jalan->nama_pelapor; ?></td>
+                  <?php
+                  $admin=$this->session->userdata('admin');
+                   if(empty($admin)==0){
+                  ?>
                   <?php
                   echo"<td class='center' width='10%'><a href='". site_url()."detail_pengaduan?id=".$data_jalan->kode_pengaduan."'>
                   <button type='button' class='btn btn-success'>Detail</button></a>
                     </td>";
                   ?>
-
+                  <?php
+                    }
+                  ?>
                 </tr>
               <?php
                }
                ?>
+               <?php
+             }else{
+                ?>
+                <?php
+                   $i=0;
+
+                   foreach($umum as $data_jalan){
+                    $i++;
+                 ?>
+                  <tr>
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $data_jalan->tanggal_create; ?></td>
+                    <td><?php echo $data_jalan->nama_jalan; ?></td>
+                    <td><?php echo $data_jalan->nama_kabupaten; ?></td>
+                    <td><?php echo $data_jalan->nama_kecamatan; ?></td>
+
+                    <td>
+                      <?php
+                      if($data_jalan->kondisi==1){
+                        echo '<span class="label label-round label-warning">Rusak Ringan</span>';
+                      }else if($data_jalan->kondisi==2){
+                        echo '<span class="label label-round label-danger">Rusak Parah</span>';
+                      }else if($data_jalan->kondisi==3){
+                        echo '<span class="label label-round label-primary">Belum Tembus</span>';
+                      }
 
 
+                      ?>
+                    </td>
+                    <td>
+                      <?php
+                      if($data_jalan->status==0){
+                        echo '<span class="label label-round label-warning">Belum Diperoses</span>';
+                      }else if($data_jalan->status==1){
+                        echo '<span class="label label-round label-danger">Sedang Diperoses</span>';
+                      }
+
+
+                      ?>
+
+                    <td><?php echo $data_jalan->nama_pelapor; ?></td>
+
+                  </tr>
+                <?php
+                 }
+                 ?>
+                <?php
+                 }
+                 ?>
             </tbody>
           </table>
         </div>
