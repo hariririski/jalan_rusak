@@ -161,7 +161,7 @@
 
           <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="pengaduan"||$link =="tambah_pengaduan"){ echo "active";}?> ">
             <a href="javascript:void(0)" data-dropdown-toggle="false">
-              <i class="site-menu-icon md-accounts-list-alt"" aria-hidden="true"></i>
+              <i class="site-menu-icon md-accounts-list-alt" aria-hidden="true"></i>
               <span class="site-menu-title">Pegaduan Masyarakat</span>
               <span class="site-menu-arrow"></span>
             </a>
@@ -172,7 +172,7 @@
                   <span class="site-menu-title">Lihat Pengaduan</span>
                 </a>
               </li>
-          
+
               <li class="site-menu-item <?php $link=uri_string(); if($link =="tambah_pengaduan"){ echo "active";}?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>tambah_pengaduan">
                   <span class="site-menu-title">Tambah Pengaduan</span>
@@ -210,7 +210,15 @@
               </li>
             </ul>
           </li>
+
         <?php } ?>
+        <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="help"){ echo "active";} ?>">
+          <a href="<?php echo site_url(); ?>help" data-dropdown-toggle="false">
+            <i class="site-menu-icon  md-pin-help" aria-hidden="true"></i>
+            <span class="site-menu-title">Help</span>
+            <span class="site-menu-arrow"></span>
+          </a>
+        </li>
         </ul>
       </div>
     </div>

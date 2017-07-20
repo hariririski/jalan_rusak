@@ -311,22 +311,23 @@
                 <br>
                 <div class="form-group form-material col-lg-12 text-center padding-top-m">
                   <?php if($pengaduan->status==0 ){?>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button><a>
+                    <a href="<?php echo site_url(); ?>pengaduan/proses_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button><a>
                     <button type="button" disabled class="btn btn-success waves-effect waves-light" >Verfikasi Pengaduan</button>
                     <button type="button" disabled class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button>
                     <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
                   <?php }else if($pengaduan->status==1){ ?>
                     <button type="button" disabled class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button>
                     <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button"  class="btn btn-success waves-effect waves-light" >Verfikasi Pengaduan</button></a>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button></a>
+                    <a href="<?php echo site_url(); ?>pengaduan/palsu_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button></a>
                     <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
                   <?php }else if($pengaduan->status==2||$pengaduan->status==3){ ?>
                     <button type="button" disabled class="btn btn-warning waves-effect waves-light" >Proses Pengaduan</button><a>
                     <button type="button" disabled class="btn btn-success waves-effect waves-light" >Verfikasi Pengaduan</button>
                     <button type="button" disabled class="btn btn-danger waves-effect waves-light" >Pengaduan Palsu</button>
-                    <a href="<?php echo site_url(); ?>verifikasi_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
-                    <a href=""><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
+                    <a href="<?php echo site_url(); ?>pengaduan/hapus_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-danger waves-effect waves-light" >Hapus</button></a>
+
                   <?php } ?>
+                    <a href="<?php echo site_url(); ?>pengaduan/reset_pengaduan?id=<?php echo $pengaduan->kode_pengaduan?>"><button type="button" class="btn btn-primary waves-effect waves-light" >Reset</button></a>
                 </div>
               </div>
             </form>

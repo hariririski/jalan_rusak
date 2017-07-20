@@ -19,6 +19,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        		$this->load->view('Home',$data);
        	}
 
+        public function help()
+       {
+         $this->load->view('Help');
+       }
+
 
    }
 ?>

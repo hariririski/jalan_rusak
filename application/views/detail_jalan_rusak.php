@@ -295,10 +295,30 @@
                 $admin=$this->session->userdata('admin');
                  if(empty($admin)==0){
                 ?>
-                <?php echo"
+                <?php
+                if( $data_jalan_rusak->perbaikan==null){
+
+                echo"
                 <center>
-                <a href='". site_url()."Jalan/proses_hapus_jalan?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Merubah Status Jalan Rusak Menjadi Sudah Di Perbaiki ?')
+                <a href='". site_url()."Jalan_rusak/perbaikan_jalan_rusak?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Merubah Status Jalan Rusak Menjadi Sudah Di Perbaiki ?')
                   \" title='Hapus'><button type='button' class='btn btn-success'>Sudah Dilakukan Perbaikan</button></a>
+
+
+                  ";
+
+                }else{
+                  echo"
+                  <center>
+                  <a href='". site_url()."Jalan_rusak/reset_perbaikan_jalan_rusak?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Mereset status perbaikan ?')
+                    \" title='Hapus'><button type='button' class='btn btn-danger'>Reset</button></a>
+
+
+                    ";
+
+                }?>
+                <?php echo"
+
+
                 <a href='". site_url()."edit_jalan_rusak?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Mengubah Data Jalan Rusak ?')
                     \" title='Hapus'><button type='button' class='btn btn-warning'>Edit Jalan Rusak</button></a>
                 <center>

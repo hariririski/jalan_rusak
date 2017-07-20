@@ -83,7 +83,7 @@
       <div class="panel">
 
           <div class="panel-body">
-            <form  action="pengaduan/proses_tambah_pengaduan" method="post" enctype="multipart/form-data"   class="fv-form fv-form-bootstrap">
+            <form  action="jalan_rusak/proses_tambah_jalan_rusak_pengaduan" method="post" enctype="multipart/form-data"   class="fv-form fv-form-bootstrap">
 
               <div class="row row-lg">
                 <div class="col-lg-6 form-horizontal">

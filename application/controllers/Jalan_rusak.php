@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        //$config['max_width']     = 10240;
        //$config['max_height']    = 7680;
        $new_name ="JALAN_RUSAK".time().$_FILES["gambar"] ['name'];
+       $new_name=str_replace(" ","_",$new_name);
        $config['file_name']=$new_name;
        $this->load->library('upload', $config);
 
@@ -55,6 +56,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
              }
        }
      }
+
+     function proses_tambah_jalan_rusak_pengaduan(){
+      $config['upload_path']   = './uploads/';
+      $config['allowed_types'] = 'png|PNG|JPG|jpg|jpeg|JPE|gif|bmp';
+      $config['max_size']      = 99999999;
+      //$config['max_width']     = 10240;
+      //$config['max_height']    = 7680;
+      $new_name ="JALAN_RUSAK".time().$_FILES["gambar"] ['name'];
+      $new_name=str_replace(" ","_",$new_name);
+      $config['file_name']=$new_name;
+      $this->load->library('upload', $config);
+
+      if ( ! $this->upload->do_upload('gambar')) {
+
+              $this->session->set_flashdata('pesan', '
+              <div class="alert alert-danger fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Gagal!</strong> Gambar Terlalu Besar.
+              </div>');
+              echo "filenya";
+              //redirect('tambah_jalan');
+      }else {
+            $cek=$this->M_Jalan_rusak->tambah_jalan_rusak($new_name);
+            if($cek){
+              $this->tambah_berhasil();
+              redirect('tambah_jalan_rusak');
+            }else{
+              $this->tambah_gagal();
+              redirect('tambah_jalan_rusak');
+            }
+      }
+    }
 
      public function proses_hapus_jalan_rusak(){
          $id=$_GET ['id'];
@@ -83,6 +116,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $data['kecamatan'] = $this->M_Kecamatan->lihat_kecamatan();
          $data['jalan'] = $this->M_Jalan->lihat_jalan();
          $this->load->view('edit_jalan_rusak',$data);
+     }
+
+     public function perbaikan_jalan_rusak(){
+       $id=$_GET['id'];
+       $cek= $this->M_Jalan_rusak->perbaikan_jalan_rusak($id);
+       if($cek){
+         $this->perbaikan_jalan_rusak_berhasil();
+         redirect("detail_jalan_rusak?id=".$id);
+       }else{
+         $this->perbaikan_jalan_rusak_gagal();
+         redirect("detail_jalan_rusak?id=".$id);
+       }
+     }
+
+     public function reset_perbaikan_jalan_rusak(){
+       $id=$_GET['id'];
+       $cek= $this->M_Jalan_rusak->reset_perbaikan_jalan_rusak($id);
+       if($cek){
+         $this->perbaikan_jalan_rusak_berhasil();
+         redirect("detail_jalan_rusak?id=".$id);
+       }else{
+         $this->perbaikan_jalan_rusak_gagal();
+         redirect("detail_jalan_rusak?id=".$id);
+       }
      }
 
 
@@ -126,6 +183,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="alert alert-danger fade in">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <strong>Gagal!</strong> Data Gagal Di Hapus!.
+              </div>');
+    }
+
+    function perbaikan_jalan_rusak_berhasil(){
+      $this->session->set_flashdata('pesan', '
+              <div class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Berhasil!</strong>Status Jalan Berhasil diperbaharui!.
+              </div>');
+    }
+    function perbaikan_jalan_rusak_gagal(){
+      $this->session->set_flashdata('pesan', '
+              <div class="alert alert-danger fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Gagal!</strong> Status Jalan Gagal diperbaharui!.
               </div>');
     }
 

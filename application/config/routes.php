@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /*-----------------------------------------------------------------------*/
 $route['default_controller'] = 'Home';
 $route['home'] = 'Home';
+$route['help'] = 'Home/help';
 $route['home_admin'] = 'Home_admin';
 $route['peta'] = 'Peta';
 $route['popup'] = 'Peta/popup';

@@ -17,6 +17,56 @@ class M_Pengaduan extends CI_Model{
         return $query->result();
     }
 
+    function proses_pengaduan($id)
+    {
+      $status=1;
+      $data = array(
+          'status'=>$status
+      );
+      $this->db->where('kode_pengaduan',$id);
+      $cek=$this->db->update('pengaduan',$data);
+      return $cek;
+    }
+    function verifikasi_pengaduan($id)
+    {
+      $status=2;
+      $data = array(
+          'status'=>$status
+      );
+      $this->db->where('kode_pengaduan',$id);
+      $cek=$this->db->update('pengaduan',$data);
+      return $cek;
+    }
+
+    function palsu_pengaduan($id)
+    {
+      $status=3;
+      $data = array(
+          'status'=>$status
+      );
+      $this->db->where('kode_pengaduan',$id);
+      $cek=$this->db->update('pengaduan',$data);
+      return $cek;
+    }
+    function reset_pengaduan($id)
+    {
+      $status=0;
+      $data = array(
+          'status'=>$status
+      );
+      $this->db->where('kode_pengaduan',$id);
+      $cek=$this->db->update('pengaduan',$data);
+      return $cek;
+    }
+
+    function hapus_pengaduan($id)
+    {
+      $query=$this->db->where('kode_pengaduan', $id);
+      $cek=$this->db->delete('pengaduan');
+      return $cek;
+    }
+
+
 
     function tambah_pengaduan($new_name)
     {
@@ -43,15 +93,5 @@ class M_Pengaduan extends CI_Model{
       return $cek;
     }
 
-    function edit_pengaduan()
-    {
-        $query=$this->db->query("");
-        return $query->result();
-    }
 
-    function hapus_pengaduan()
-    {
-        $query=$this->db->query("");
-        return $query->result();
-    }
 }

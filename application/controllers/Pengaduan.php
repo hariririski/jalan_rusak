@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         //$config['max_width']     = 10240;
         //$config['max_height']    = 7680;
         $new_name ="PENGADUAN".time().$_FILES["gambar"] ['name'];
+        $new_name=str_replace(" ","_",$new_name);
         $config['file_name']=$new_name;
         $this->load->library('upload', $config);
 
@@ -76,6 +77,65 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $data['jalan'] = $this->M_Jalan->lihat_jalan();
       $this->load->view('verifikasi_pengaduan',$data);
     }
+    public function proses_pengaduan(){
+      $id=$_GET['id'];
+      $cek= $this->M_Pengaduan->proses_pengaduan($id);
+      if($cek){
+        $this->proses_pengaduan_berhasil();
+        redirect("detail_pengaduan?id=".$id);
+      }else{
+        $this->proses_pengaduan_gagal();
+        redirect("detail_pengaduan?id=".$id);
+      }
+    }
+
+    public function proses_verifikasi_pengaduan(){
+      $id=$_GET['id'];
+      $cek= $this->M_Pengaduan->verifikasi_pengaduan($id);
+      if($cek){
+        $this->proses_verifikasi_pengaduan_berhasil();
+        redirect("detail_pengaduan?id=".$id);
+      }else{
+        $this->proses_verifikasi_pengaduan_gagal();
+        redirect("detail_pengaduan?id=".$id);
+      }
+    }
+    public function reset_pengaduan(){
+      $id=$_GET['id'];
+      $cek= $this->M_Pengaduan->reset_pengaduan($id);
+      if($cek){
+        $this->reset_pengaduan_berhasil();
+        redirect("detail_pengaduan?id=".$id);
+      }else{
+        $this->reset_pengaduan_gagal();
+        redirect("detail_pengaduan?id=".$id);
+      }
+    }
+
+    public function Palsu_pengaduan(){
+      $id=$_GET['id'];
+      $cek= $this->M_Pengaduan->Palsu_pengaduan($id);
+      if($cek){
+        $this->proses_pengaduan_palsu_berhasil();
+        redirect("detail_pengaduan?id=".$id);
+      }else{
+        $this->proses_pengaduan_palsu_gagal();
+        redirect("detail_pengaduan?id=".$id);
+      }
+    }
+
+    public function hapus_pengaduan(){
+      $id=$_GET['id'];
+      $cek= $this->M_Pengaduan->hapus_pengaduan($id);
+      if($cek){
+        $this->hapus_berhasil();
+        redirect("lihat_pengaduan");
+      }else{
+        $this->hapus_gagal();
+          redirect("lihat_pengaduan");
+      }
+    }
+
        function tambah_berhasil(){
         $this->session->set_flashdata('pesan', '
                 <div class="alert alert-success fade in">
@@ -108,7 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->session->set_flashdata('pesan', '
                 <div class="alert alert-success fade in">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Berhasil!</strong> Data Berhasil Dihapus!.
+                <strong>Berhasil !</strong> Data Berhasil Dihapus!.
                 </div>');
       }
       function hapus_gagal(){
@@ -118,6 +178,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <strong>Gagal!</strong> Data Gagal Di Hapus!.
                 </div>');
       }
+
+      function proses_pengaduan_berhasil(){
+       $this->session->set_flashdata('pesan', '
+               <div class="alert alert-success fade in">
+               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+               <strong>Berhasil!</strong> Pengaduan Berhasil Diproses !.
+               </div>');
+     }
+     function proses_pengaduan_gagal(){
+       $this->session->set_flashdata('pesan', '
+               <div class="alert alert-danger fade in">
+               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+               <strong>Gagal!</strong> Pengaduan Gagal Diproses!.
+               </div>');
+     }
+
+     function proses_verifikasi_pengaduan_berhasil(){
+      $this->session->set_flashdata('pesan', '
+              <div class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Berhasil!</strong> Pengaduan Berhasil Di Verifikasi !.
+              </div>');
+    }
+    function proses_verifikasi_pengaduan_gagal(){
+      $this->session->set_flashdata('pesan', '
+              <div class="alert alert-danger fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Gagal!</strong> Pengaduan Gagal Di Verifikasi!.
+              </div>');
+    }
+
+    function proses_pengaduan_palsu_berhasil(){
+     $this->session->set_flashdata('pesan', '
+             <div class="alert alert-success fade in">
+             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+             <strong>Berhasil!</strong> Menetapkan Pengaduan sebagai Pengaduan Palsu !.
+             </div>');
+   }
+   function proses_pengaduan_palsu_gagal(){
+     $this->session->set_flashdata('pesan', '
+             <div class="alert alert-danger fade in">
+             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+             <strong>Gagal!</strong> Menetapkan Pengaduan sebagai Pengaduan Palsu!.
+             </div>');
+   }
+
+   function reset_pengaduan_berhasil(){
+    $this->session->set_flashdata('pesan', '
+            <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Berhasil!</strong> Berhasil Mereset Pengaduan !.
+            </div>');
+  }
+  function reset_pengaduan_gagal(){
+    $this->session->set_flashdata('pesan', '
+            <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Gagal!</strong> Gagal Mereset Pengaduan!.
+            </div>');
+  }
 
 
 

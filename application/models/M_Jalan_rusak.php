@@ -69,9 +69,25 @@ class M_Jalan_rusak extends CI_Model{
         return $cek;
     }
 
-    function detail_jalan_rusak()
+    function perbaikan_jalan_rusak($id)
     {
-        $query=$this->db->query("");
-        return $query->result();
+      $perbaikan=1;
+      $data = array(
+          'perbaikan'=>$perbaikan
+      );
+      $this->db->where('kode_jalan_rusak',$id);
+      $cek=$this->db->update('jalan_rusak',$data);
+      return $cek;
+    }
+
+    function reset_perbaikan_jalan_rusak($id)
+    {
+      $perbaikan=null;
+      $data = array(
+          'perbaikan'=>$perbaikan
+      );
+      $this->db->where('kode_jalan_rusak',$id);
+      $cek=$this->db->update('jalan_rusak',$data);
+      return $cek;
     }
 }
