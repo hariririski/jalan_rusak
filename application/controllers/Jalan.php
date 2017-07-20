@@ -23,6 +23,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        		$this->load->view('Lihat_jalan',$data);
        	}
 
+        function kecamatan($id) {
+    			$data1=null;
+    			$this->load->model('M_Kecamatan');
+    			$data=$this->M_Kecamatan->kecamatan_kab($id);
+
+    			foreach($data as $data2){
+    			$data1.='<option value="'.$data2->id_kecamatan.'">'.$data2->nama_kecamatan.'</option>';
+    			}
+    			echo $data1;
+    		}
+
         public function tambah_jalan()
        {
          $data['kabupaten'] = $this->M_Kabupaten->lihat_kabupaten();

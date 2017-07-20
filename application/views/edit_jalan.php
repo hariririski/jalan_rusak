@@ -50,6 +50,22 @@
   <script>
   Breakpoints();
   </script>
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery_combo.js"></script> <!-- ajax-bertingkat -->
+<script>
+$(document).ready(function() {
+$("#kabupaten").change(function(){
+  var kode_kabupaten = $("#kabupaten").val();
+  $.ajax({
+    type: "POST",
+    url: "<?php echo base_url(); ?>jalan/kecamatan/"+kode_kabupaten,
+    data: "kode_kabupaten="+kode_kabupaten,
+    success: function(data){
+      $("#kecamatan").html(data);
+    }
+  });
+});
+});
+</script>
 </head>
 <body class="site-navbar-small ">
 <?php echo $this->session->flashdata('pesan')?>
@@ -135,7 +151,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class="col-lg-9 col-sm-9">
-                      <select class="form-control select2-hidden-accessible" name="id_kabupaten" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                      <select id="kabupaten" class="form-control select2-hidden-accessible" name="id_kabupaten" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value=""><?php echo $data_jalan->nama_kabupaten?></option>
                         <?php
 
@@ -155,16 +171,9 @@
                     </label>
                     <div class="col-lg-9 col-sm-9">
 
-                        <select class="form-control select2-hidden-accessible" name="id_kecamatan" data-plugin="select2" d data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                          <option value=""><?php echo $data_jalan->nama_kecamatan?></option>
-                          <?php
-                             foreach($kecamatan as $kecamatan){
-                               if($data_jalan->id_kecamatan!=$kecamatan->id_kecamatan){
-                           ?>
-                          <option value="<?php echo $kecamatan->id_kecamatan; ?>"><?php echo $kecamatan->nama_kecamatan; ?></option>
-                          <?php
-                                }
-                            } ?>
+                        <select id="kecamatan" class="form-control select2-hidden-accessible" name="id_kecamatan" data-plugin="select2" d data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                          <option value="<?php echo $data_jalan->id_kecamatan?>"><?php echo $data_jalan->nama_kecamatan?></option>
+
                         </select>
                     <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Plilh Kecataman</small></div>
                   </div>

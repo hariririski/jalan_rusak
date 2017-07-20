@@ -11,12 +11,11 @@
       <i class="icon md-more" aria-hidden="true"></i>
     </button>
     <a class="navbar-brand navbar-brand-center" href="<?php echo site_url(); ?>">
-      <img class="navbar-brand-logo navbar-brand-logo-normal" src="<?php echo site_url(); ?>assets/assets/images/logo.jpg"
-      title="Remark">
+      <img class=" " src="<?php echo site_url(); ?>assets/assets/images/banner.png" width="130%"
+      title="BINA MARGA">
       <img class="navbar-brand-logo navbar-brand-logo-special" src="<?php echo site_url(); ?>assets/assets/images/logo.jpg"
-      title="Remark">
-      <span class="navbar-brand-text hidden-xs">BINA MARGA PROVINSI ACEH</span>
-    </a>
+      title="BINA MARGA">
+      </a>
 
   </div>
   <div class="navbar-container container-fluid">

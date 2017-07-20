@@ -50,6 +50,23 @@
   <script>
   Breakpoints();
   </script>
+
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery_combo.js"></script> <!-- ajax-bertingkat -->
+<script>
+$(document).ready(function() {
+$("#kabupaten").change(function(){
+  var kode_kabupaten = $("#kabupaten").val();
+  $.ajax({
+    type: "POST",
+    url: "<?php echo base_url(); ?>jalan/kecamatan/"+kode_kabupaten,
+    data: "kode_kabupaten="+kode_kabupaten,
+    success: function(data){
+      $("#kecamatan").html(data);
+    }
+  });
+});
+});
+</script>
 </head>
 <body class="site-navbar-small ">
 <?php echo $this->session->flashdata('pesan')?>
@@ -134,7 +151,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class="col-lg-9 col-sm-9">
-                      <select class="form-control select2-hidden-accessible" name="id_kabupaten" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                      <select id="kabupaten" class="form-control select2-hidden-accessible" name="id_kabupaten" data-plugin="select2" data-placeholder="Pilih Kabupaten" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
                         <?php
                            $i=0;
@@ -152,15 +169,9 @@
                     </label>
                     <div class="col-lg-9 col-sm-9">
 
-                        <select class="form-control select2-hidden-accessible" name="id_kecamatan" data-plugin="select2" data-placeholder="Select a State" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select id="kecamatan" class="form-control select2-hidden-accessible" name="id_kecamatan" data-plugin="select2" data-placeholder="Pilih Kecamatan" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
-                          <?php
-                             $i=0;
-                             foreach($kecamatan as $kecamatan){
-                             $i++;
-                           ?>
-                          <option value="<?php echo $kecamatan->id_kecamatan; ?>"><?php echo $kecamatan->nama_kecamatan; ?></option>
-                          <?php } ?>
+
                         </select>
                     <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Plilh Kecataman</small></div>
                   </div>
@@ -238,7 +249,7 @@
                     </div>
                     <div class="form-group form-material ">
                       <label class="col-lg-3 col-sm-3 control-label">URL File Peta (.KMZ)
-                        
+
                       </label>
                       <div class=" col-lg-9 col-sm-9">
                         <input type="text" class="form-control" name="peta" placeholder="URL Peta"  >

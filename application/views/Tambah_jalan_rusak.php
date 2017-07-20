@@ -63,7 +63,22 @@
   </style>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyBJEyzwKXH2n9SpdmUoRQqWbtvOVSLukyw&origins&callback=initMap"> </script>
-
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery_combo.js"></script> <!-- ajax-bertingkat -->
+  <script>
+  $(document).ready(function() {
+  $("#kabupaten").change(function(){
+  var kode_kabupaten = $("#kabupaten").val();
+  $.ajax({
+    type: "POST",
+    url: "<?php echo base_url(); ?>jalan/kecamatan/"+kode_kabupaten,
+    data: "kode_kabupaten="+kode_kabupaten,
+    success: function(data){
+      $("#kecamatan").html(data);
+    }
+  });
+  });
+  });
+  </script>
 </head>
 <body class="site-navbar-small ">
 <?php echo $this->session->flashdata('pesan')?>
@@ -92,7 +107,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class="col-lg-9 col-sm-9">
-                        <select class="form-control select2-hidden-accessible" name="id_kabupaten" required data-plugin="select2" data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select id="kabupaten" class="form-control select2-hidden-accessible" name="id_kabupaten" required data-plugin="select2" data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                             <option value="">Pilih</option>
                           <?php
                              $i=0;
@@ -109,16 +124,10 @@
                         <span class="required">*</span>
                       </label>
                       <div class="col-lg-9 col-sm-9">
-                        <select class="form-control select2-hidden-accessible" name="id_kecamatan" required data-plugin="select2" data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select id="kecamatan" class="form-control select2-hidden-accessible" name="id_kecamatan" required data-plugin="select2" data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="">Pilih</option>
-                          <?php
-                             $i=0;
-                             foreach($kecamatan as $kecamatan){
-                             $i++;
-                           ?>
-                          <option value="<?php echo $kecamatan->id_kecamatan; ?>"><?php echo $kecamatan->nama_kecamatan; ?></option>
-                          <?php } ?>
-                          </optgroup>
+
+
                         </select>
                       <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Plilh Kecataman</small></div>
                     </div>
