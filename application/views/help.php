@@ -76,29 +76,13 @@ Breakpoints();
                       <div class="panel-heading" id="question-1" role="tab">
                         <a class="panel-title" aria-controls="answer-1" aria-expanded="true" data-toggle="collapse"
                         href="#answer-1" data-parent="#accordion2">
-                        What is Lorem ipsum?
+                      Apa Itu Sistem Informasi Geografis Jalan Provinsi Aceh ?
                       </a>
                       </div>
                       <div class="panel-collapse collapse in" id="answer-1" aria-labelledby="question-1"
                       role="tabpanel">
                         <div class="panel-body">
-                          Lorem ipsum Voluptate ad et culpa ad eu ex nulla voluptate nostrud consectetur
-                          nisi nisi incididunt voluptate enim labore occaecat qui
-                          laboris id sunt aute mollit reprehenderit aute non dolor
-                          labore tempor Duis ex deserunt proident elit enim culpa
-                          labore fugiat labore velit ut ea aute Ut laboris culpa
-                          consectetur ex tempor cillum consectetur enim do aute
-                          ut commodo mollit aute esse enim fugiat quis Excepteur
-                          enim in qui nostrud et ad nulla tempor cupidatat fugiat
-                          proident ut proident elit cupidatat laborum in fugiat
-                          amet elit mollit sit commodo reprehenderit enim minim
-                          sit Duis laboris dolor velit sed dolore consequat ea
-                          magna ut laborum incididunt nostrud do non nisi minim
-                          anim dolor anim ex adipisicing ut ex Ut cupidatat consectetur
-                          ut magna est minim proident occaecat aliquip consectetur
-                          adipisicing dolor ea nulla dolore commodo reprehenderit
-                          velit nulla eu dolor proident aliqua elit est aliqua
-                          labore eiusmod.
+                          Sistem Informasi Geografis Jalan Provinsi Aceh adalah Website Yang Menampilkan data Jalan dan Kondisi Jalan Provinsi Aceh Dengan Menggunakan Peta.
                         </div>
                       </div>
                     </div>
@@ -108,24 +92,13 @@ Breakpoints();
                       <div class="panel-heading" id="question-2" role="tab">
                         <a class="panel-title" aria-controls="answer-2" aria-expanded="false" data-toggle="collapse"
                         href="#answer-2" data-parent="#accordion2">
-                        How much does it cost to use Lorem ipsum?
+                        Apa saja yang dapat dilihat di web Ini ?
                       </a>
                       </div>
                       <div class="panel-collapse collapse" id="answer-2" aria-labelledby="question-2"
                       role="tabpanel">
                         <div class="panel-body">
-                          Laborum commodo cupidatat adipisicing aliqua qui in dolore occaecat labore nisi
-                          occaecat enim dolor sit exercitation sit Duis minim tempor
-                          est aliquip sit nostrud ea ea sit nostrud dolore cillum
-                          exercitation officia sunt pariatur consequat velit id
-                          nulla id Duis minim sunt sint culpa amet veniam commodo
-                          nisi reprehenderit tempor irure sunt enim in eu reprehenderit
-                          anim nulla tempor pariatur nisi fugiat consectetur sint
-                          deserunt elit voluptate in in labore eiusmod nostrud
-                          eiusmod est ullamco sit qui ut ut velit in veniam in
-                          Ut nulla pariatur reprehenderit deserunt laboris sed
-                          cupidatat est dolore adipisicing Duis in ut dolore dolor
-                          sunt aute ut Excepteur sint consectetur.
+                          Website ini Memberikan Informasi Jalan Provinsi serta kondisi jalan provinsi Aceh. Terdapat Fitur Pengaduan Yang Memungkinkan Masyarakat Melakukan Pengaduan Terhadap Kondisi Jalan Provinsi Aceh.
                         </div>
                       </div>
                     </div>
@@ -135,40 +108,21 @@ Breakpoints();
                       <div class="panel-heading" id="question-3" role="tab">
                         <a class="panel-title" aria-controls="answer-3" aria-expanded="false" data-toggle="collapse"
                         href="#answer-3" data-parent="#accordion2">
-                        What is the lorem ipsum pariatur?
+                        Bagaimana jika ingin Menghubungi Dinas Bina Marga ?
                       </a>
                       </div>
                       <div class="panel-collapse collapse" id="answer-3" aria-labelledby="question-3"
                       role="tabpanel">
                         <div class="panel-body">
-                          Lorem ipsum Esse pariatur sit reprehenderit non culpa sint ullamco qui in aliquip
-                          enim exercitation laborum ut eu voluptate exercitation
-                          Duis dolore amet pariatur id occaecat incididunt deserunt
-                          nulla esse proident.
+                          Dapat Mendatangi DINAS BINA MARGA PROVINSI ACEH Di  Jl. Jendral Sudirman No.1 Kota Banda Aceh
+                          Telp. 0651 - 46694, Fax. 0651 - 47009 Atau Dapat Mengirim Email Ke
+                          Email: pengelola[at]acehprov.go.id
                         </div>
                       </div>
                     </div>
                     <!-- End Question 3 -->
                     <!-- Question 4 -->
-                    <div class="panel">
-                      <div class="panel-heading" id="question-4" role="tab">
-                        <a class="panel-title" aria-controls="answer-4" aria-expanded="false" data-toggle="collapse"
-                        href="#answer-4" data-parent="#accordion2">
-                       Lorem ipsum commodo adipisicing sunt ad aliqua velit nulla?
-                      </a>
-                      </div>
-                      <div class="panel-collapse collapse" id="answer-4" aria-labelledby="question-4"
-                      role="tabpanel">
-                        <div class="panel-body">
-                          Lorem ipsum Do cupidatat in culpa magna voluptate ullamco et anim nulla cupidatat
-                          dolor culpa consequat quis dolor eu aliqua Ut eiusmod
-                          ullamco sint reprehenderit commodo veniam ea irure sit
-                          reprehenderit sunt sed sed proident ea incididunt esse
-                          cillum cupidatat officia Duis.
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End Question 4 -->
+
                   </div>
                 </div>
                 <!-- End Categroy 1 -->
@@ -181,15 +135,14 @@ Breakpoints();
                       <div class="panel-heading" id="question-5" role="tab">
                         <a class="panel-title" aria-controls="answer-5" aria-expanded="true" data-toggle="collapse"
                         href="#answer-5" data-parent="#accordion">
-                        Can I exercitation occaecat voluptate duis ut dolore?
+                      Apa itu Pengaduan ?
                       </a>
                       </div>
                       <div class="panel-collapse collapse in" id="answer-5" aria-labelledby="question-5"
                       role="tabpanel">
                         <div class="panel-body">
-                          Consecutus sicine hominum, artem conclusionemque patientia, omni fuerit intemperantiam
-                          efficeretur phaedrum minime obiecta constituam, motus
-                          mandamus perfunctio contra, imagines exquisitis reiciat.
+                          Pengaduan Adalah Pemberitahuan disertai permintaan oleh pihak yang berkepentingan kepada pejabat berwenang untuk menindak lanjuti Permasalahan Yang di Hadapai
+                          Dalam Website ini Dapat Dilakukan Pengaduan Jalan Rusak Terhadap Jalan Provinsi  di Provinsi Aceh.
                         </div>
                       </div>
                     </div>
@@ -199,52 +152,25 @@ Breakpoints();
                       <div class="panel-heading" id="question-6" role="tab">
                         <a class="panel-title" aria-controls="answer-6" aria-expanded="false" data-toggle="collapse"
                         href="#answer-6" data-parent="#accordion">
-                        How do lorem ipsum quis magna magna?
+                          Bagamana Pengetahui Pengaduan telah Masuk/Diproses ?
                       </a>
                       </div>
                       <div class="panel-collapse collapse" id="answer-6" aria-labelledby="question-6"
                       role="tabpanel">
                         <div class="panel-body">
-                          Pluribus horum laetamur forensibus investigandi gravissimis quaeque possumus copulationesque.
-                          Sapientium interdictum, secutus servata expressas reici.
-                          Dixerit dixerit tantis conscientiam arbitramur reprehensa
-                          traditur propositum locos remotis, metus continent maledici
-                          attico sermo iucundius gerendarum. Bonarum incommoda
-                          afferrent iisque graeca perdiscere munere recordatione
-                          nos sapiens, perspexit, oderit nominata.
+                          Hasil Pengaduan Dpaat dilihat Pada Menu Pengaduan Masyarakat -> Lihat Pengaduan.
                         </div>
                       </div>
                     </div>
                     <!-- End Question 6 -->
                     <!-- Question 7 -->
-                    <div class="panel">
-                      <div class="panel-heading" id="question-7" role="tab">
-                        <a class="panel-title" aria-controls="answer-7" aria-expanded="false" data-toggle="collapse"
-                        href="#answer-7" data-parent="#accordion">
-                        How do I set up lorem ipsum?
-                      </a>
-                      </div>
-                      <div class="panel-collapse collapse" id="answer-7" aria-labelledby="question-7"
-                      role="tabpanel">
-                        <div class="panel-body">
-                          Acute ennius fuisset facile plena quem possim tribus antipatrum moveat, praestabiliorem
-                          geometria inportuno privamur, remissius habemus desperantes,
-                          nullas quas terrore modum uberius homine adiuvet, dissentio
-                          iudicabit ac, nullus molita foedus num. Circumcisaque
-                          nulla aut etenim doceat pecunias afferrent infinitis,
-                          propterea repellat epularum inveneris dissentiet meminerunt
-                          malivoli gloriosis, faciunt petat conscientia, nesciunt
-                          logikh fortunae, primos expedire aliquo putet aptissimum
-                          officiis naturalem.
-                        </div>
-                      </div>
-                    </div>
+                    
                     <!-- End Question 7 -->
                   </div>
                 </div>
                 <!-- End Categroy 2 -->
                 <!-- Categroy 3 -->
-              
+
               </div>
             </div>
           </div>
