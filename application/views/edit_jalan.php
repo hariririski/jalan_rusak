@@ -85,7 +85,7 @@ $("#kabupaten").change(function(){
       <div class="panel">
 
           <div class="panel-body">
-            <form   action="jalan/proses_tambah_jalan" method="post" enctype="multipart/form-data" class="fv-form fv-form-bootstrap">
+            <form   action="jalan/proses_edit_jalan/<?php echo $data_jalan->dokument?>" method="post" enctype="multipart/form-data" class="fv-form fv-form-bootstrap">
 
               <div class="row row-lg">
                 <div class="col-lg-6 form-horizontal">
@@ -95,7 +95,7 @@ $("#kabupaten").change(function(){
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" value="<?php echo $data_jalan->kode_ruas?>"  name="kode_ruas" placeholder="Kode Ruas" required=""  >
+                      <input type="text" class="form-control" readonly value="<?php echo $data_jalan->kode_ruas?>"  name="kode_ruas" placeholder="Kode Ruas" required=""  >
 
                   </div>
                   </div>
@@ -151,8 +151,8 @@ $("#kabupaten").change(function(){
                       <span class="required">*</span>
                     </label>
                     <div class="col-lg-9 col-sm-9">
-                      <select id="kabupaten" class="form-control select2-hidden-accessible" name="id_kabupaten" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                          <option value=""><?php echo $data_jalan->nama_kabupaten?></option>
+                      <select id="kabupaten" class="form-control select2-hidden-accessible" required name="id_kabupaten" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                          <option value="<?php echo $data_jalan->id_kabupaten?>"><?php echo $data_jalan->nama_kabupaten?></option>
                         <?php
 
                            foreach($kabupaten as $kabupaten){
@@ -171,7 +171,7 @@ $("#kabupaten").change(function(){
                     </label>
                     <div class="col-lg-9 col-sm-9">
 
-                        <select id="kecamatan" class="form-control select2-hidden-accessible" name="id_kecamatan" data-plugin="select2" d data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <select id="kecamatan" class="form-control select2-hidden-accessible" required name="id_kecamatan" data-plugin="select2" d data-allow-clear="true" tabindex="-1" aria-hidden="true">
                           <option value="<?php echo $data_jalan->id_kecamatan?>"><?php echo $data_jalan->nama_kecamatan?></option>
 
                         </select>

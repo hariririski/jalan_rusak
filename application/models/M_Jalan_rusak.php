@@ -38,6 +38,26 @@ class M_Jalan_rusak extends CI_Model{
       return $cek;
     }
 
+    function edit_jalan_rusak($photo,$kode_jalan_rusak)
+    {
+      $jalan_rusak = array(
+          'id_kabupaten'     =>$this->input->post('id_kabupaten'),
+          'id_kecamatan'     =>$this->input->post('id_kecamatan'),
+          'desa'             =>$this->input->post('desa'),
+          'keterangan'       =>$this->input->post('keterangan'),
+          'kode_ruas'        =>$this->input->post('kode_ruas'),
+          'kondisi'          =>$this->input->post('kondisi'),
+          'luas_jalan'       =>$this->input->post('luas_jalan'),
+          'lat'              =>$this->input->post('lat'),
+          'lon'              =>$this->input->post('lon'),
+          'photo'            =>$photo
+      );
+
+      $this->db->where('kode_jalan_rusak',$kode_jalan_rusak);
+      $cek=$this->db->update('jalan_rusak',$jalan_rusak);
+      return $cek;
+    }
+
     function jumlah_ringan()
     {
         $query=$this->db->query("SELECT COUNT(kode_jalan_rusak) AS jumlah_ringan FROM `jalan_rusak` WHERE perbaikan IS NULL and kondisi='1'");
@@ -56,11 +76,6 @@ class M_Jalan_rusak extends CI_Model{
         return $query->result();
     }
 
-    function edit_jalan_rusak()
-    {
-        $query=$this->db->query("");
-        return $query->result();
-    }
 
     function proses_hapus_jalan_rusak($id)
     {

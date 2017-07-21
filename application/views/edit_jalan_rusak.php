@@ -108,7 +108,7 @@ $("#kabupaten").change(function(){
       <div class="panel">
 
           <div class="panel-body">
-            <form   action="jalan_rusak/proses_tambah_jalan_rusak" method="post" enctype="multipart/form-data" class="fv-form fv-form-bootstrap">
+            <form   action="jalan_rusak/proses_edit_jalan_rusak/<?php echo $data_jalan_rusak->photo?>/<?php echo $data_jalan_rusak->kode_jalan_rusak?>" method="post" enctype="multipart/form-data" class="fv-form fv-form-bootstrap">
 
               <div class="row row-lg">
                 <div class="col-lg-6 form-horizontal">
@@ -119,8 +119,8 @@ $("#kabupaten").change(function(){
                         <span class="required">*</span>
                       </label>
                       <div class="col-lg-9 col-sm-9">
-                        <select id="kabupaten" class="form-control select2-hidden-accessible" name="id_kabupaten" required data-plugin="select2" data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                            <option value=""><?php echo $data_jalan_rusak->nama_kabupaten?></option>
+                        <select id="kabupaten" class="form-control select2-hidden-accessible" required name="id_kabupaten" required data-plugin="select2" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                            <option value="<?php echo $data_jalan_rusak->id_kabupaten?>"><?php echo $data_jalan_rusak->nama_kabupaten?></option>
                           <?php
 
                              foreach($kabupaten as $kabupaten){
@@ -136,9 +136,9 @@ $("#kabupaten").change(function(){
                         <span class="required">*</span>
                       </label>
                       <div class="col-lg-9 col-sm-9">
-                        <select id="kecamatan" class="form-control select2-hidden-accessible" name="id_kecamatan" required data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                          <option value=""><?php echo $data_jalan_rusak->nama_kecamatan?></option>
-                          
+                        <select id="kecamatan" class="form-control select2-hidden-accessible" required name="id_kecamatan" required data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                          <option value="<?php echo $data_jalan_rusak->id_kecamatan?>"><?php echo $data_jalan_rusak->nama_kecamatan?></option>
+
                         </select>
                       <small class="help-block" data-fv-validator="notEmpty" data-fv-for="company" data-fv-result="INVALID" style="">Plilh Kecataman</small></div>
                     </div>
@@ -163,8 +163,8 @@ $("#kabupaten").change(function(){
                       <span class="required">*</span>
                     </label>
                     <div class="col-lg-9 col-sm-9">
-                      <select class="form-control select2-hidden-accessible"  name="kode_ruas" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
-                        <option value=""><?php echo $data_jalan_rusak->nama_jalan?></option>
+                      <select class="form-control select2-hidden-accessible" required  name="kode_ruas" data-plugin="select2"  data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                        <option value="<?php echo $data_jalan_rusak->kode_ruas?>"><?php echo $data_jalan_rusak->nama_jalan?></option>
                         <?php
 
                            foreach($jalan as $jalan){
@@ -299,10 +299,9 @@ $("#kabupaten").change(function(){
 
               </div>
                 <br>
-                <?php echo"
-                <center><a href='". site_url()."Jalan/proses_hapus_jalan?id=$data_jalan_rusak->kode_jalan_rusak' onclick=\"return confirm('Apakah Anda Yakin Untuk Merubah Status Jalan Rusak Menjadi Sudah Di Perbaiki ?')
-                  \" title='Hapus'><button type='button' class='btn btn-success'>Sudah Dilakukan Perbaikan</button></a><center>
-                  ";?>
+
+                <center><button type='submit' class='btn btn-primary'>Simpan</button><center>
+
             </form>
           </div>
         </div>

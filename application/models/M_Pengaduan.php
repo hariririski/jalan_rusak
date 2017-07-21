@@ -88,9 +88,28 @@ class M_Pengaduan extends CI_Model{
           'lon'              =>$this->input->post('lon'),
           'photo'            =>$photo
       );
-
       $cek=$this->db->insert('pengaduan',$jalan_rusak);
       return $cek;
+    }
+
+      function edit_pengaduan($photo,$kode_pengaduan)
+      {
+        $jalan_rusak = array(
+            'id_kabupaten'     =>$this->input->post('id_kabupaten'),
+            'id_kecamatan'     =>$this->input->post('id_kecamatan'),
+            'desa'             =>$this->input->post('desa'),
+            'keterangan'       =>$this->input->post('keterangan'),
+            'nama_jalan'       =>$this->input->post('nama_jalan'),
+            'kondisi'          =>$this->input->post('kondisi'),
+            'luas_jalan'       =>$this->input->post('luas_jalan'),
+            'lat'              =>$this->input->post('lat'),
+            'lon'              =>$this->input->post('lon'),
+            'photo'            =>$photo
+        );
+
+        $this->db->where('kode_pengaduan',$kode_pengaduan);
+        $cek=$this->db->update('pengaduan',$jalan_rusak);
+        return $cek;
     }
 
 

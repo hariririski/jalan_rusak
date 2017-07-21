@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $this->load->model('M_Kecamatan');
          $this->load->model('M_Jalan');
          $this->load->model('M_Jalan_rusak');
+         $this->load->model('M_Pengaduan');
   			 $this->load->database();
   			 }
 
@@ -43,8 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                <strong>Gagal!</strong> Gambar Terlalu Besar.
                </div>');
-               echo "filenya";
-               //redirect('tambah_jalan');
+               redirect('tambah_jalan_rusak');
        }else {
              $cek=$this->M_Jalan_rusak->tambah_jalan_rusak($new_name);
              if($cek){
@@ -56,6 +56,93 @@ defined('BASEPATH') OR exit('No direct script access allowed');
              }
        }
      }
+
+     function proses_edit_jalan_rusak($photo_lama,$kode_jalan_rusak){
+       $photo_baru=$_FILES["gambar"] ['name'];
+
+       if(!empty($photo_baru)){
+            $config['upload_path']   = './uploads/';
+            $config['allowed_types'] = 'png|PNG|JPG|jpg|jpeg|JPE|gif|bmp';
+            $config['max_size']      = 99999999;
+            //$config['max_width']     = 10240;
+            //$config['max_height']    = 7680;
+            $new_name ="JALAN_RUSAK".time().$_FILES["gambar"] ['name'];
+            $new_name=str_replace(" ","_",$new_name);
+            $config['file_name']=$new_name;
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('gambar')) {
+
+                    $this->session->set_flashdata('pesan', '
+                    <div class="alert alert-danger fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Gagal!</strong> Gambar Terlalu Besar.
+                    </div>');
+                    redirect('detail_jalan_rusak?id='.$kode_jalan_rusak);
+            }else {
+                  $link= FCPATH."uploads/".$document_lama;
+                  unlink($link);
+                  $cek=$this->M_Jalan_rusak->edit_jalan_rusak($new_name,$kode_jalan_rusak);
+
+            }
+      }else{
+        $cek=$this->M_Jalan_rusak->edit_jalan_rusak($photo_lama,$kode_jalan_rusak);
+      }
+
+      if($cek){
+        $this->edit_berhasil();
+        redirect('detail_jalan_rusak?id='.$kode_jalan_rusak);
+      }else{
+        $this->edit_gagal();
+        redirect('detail_jalan_rusak?id='.$kode_jalan_rusak);
+      }
+    }
+
+    function proses_tambah_jalan_rusak_from_pengaduan($photo_lama,$kode_pengaduan){
+      $photo_baru=$_FILES["gambar"] ['name'];
+
+      if(!empty($photo_baru)){
+           $config['upload_path']   = './uploads/';
+           $config['allowed_types'] = 'png|PNG|JPG|jpg|jpeg|JPE|gif|bmp';
+           $config['max_size']      = 99999999;
+           //$config['max_width']     = 10240;
+           //$config['max_height']    = 7680;
+           $new_name ="JALAN_RUSAK".time().$_FILES["gambar"] ['name'];
+           $new_name=str_replace(" ","_",$new_name);
+           $config['file_name']=$new_name;
+           $this->load->library('upload', $config);
+
+           if ( ! $this->upload->do_upload('gambar')) {
+
+                   $this->session->set_flashdata('pesan', '
+                   <div class="alert alert-danger fade in">
+                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                   <strong>Gagal!</strong> Gambar Terlalu Besar.
+                   </div>');
+                   redirect('detail_jalan_rusak?id='.$kode_pengaduan);
+           }else {
+                 $link= FCPATH."uploads/".$photo_lama;
+                 unlink($link);
+                 $cek=$this->M_Jalan_rusak->tambah_jalan_rusak($new_name);
+                 $cek=$this->M_Pengaduan->edit_pengaduan($new_name,$kode_pengaduan);
+
+           }
+     }else{
+       $cek=$this->M_Jalan_rusak->tambah_jalan_rusak($photo_lama);
+       $cek=$this->M_Pengaduan->edit_pengaduan($photo_lama,$kode_pengaduan);
+     }
+
+     if($cek){
+       $cek=$this->M_Pengaduan->verifikasi_pengaduan($kode_pengaduan);
+       $this->tambah_berhasil();
+       redirect("pengaduan");
+     }else{
+       $this->tambah_gagal();
+       redirect('detail_jalan_rusak?id='.$kode_pengaduan);
+     }
+   }
+
+
 
      function proses_tambah_jalan_rusak_pengaduan(){
       $config['upload_path']   = './uploads/';
@@ -75,8 +162,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <strong>Gagal!</strong> Gambar Terlalu Besar.
               </div>');
-              echo "filenya";
-              //redirect('tambah_jalan');
+              redirect('tambah_jalan_rusak');
       }else {
             $cek=$this->M_Jalan_rusak->tambah_jalan_rusak($new_name);
             if($cek){
