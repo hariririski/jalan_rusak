@@ -116,7 +116,7 @@ $("#kabupaten").change(function(){
                     </div>
                   </div>
                   <div class="form-group form-material ">
-                    <label class="col-lg-3 col-sm-3 control-label">Ruas Jalan
+                    <label class="col-lg-3 col-sm-3 control-label">Nama Jalan
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
