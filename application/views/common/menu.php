@@ -106,6 +106,10 @@
             </a>
 
           </li>
+          <?php
+          $admin=$this->session->userdata('admin');
+           if(empty($admin)==0){
+          ?>
           <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="jalan"||$link =="jalan_rusak"){ echo "active";} ?>">
             <a href="javascript:void(0)" data-dropdown-toggle="false">
               <i class="site-menu-icon md-view-list-alt" aria-hidden="true"></i>
@@ -113,16 +117,13 @@
               <span class="site-menu-arrow"></span>
             </a>
             <ul class="site-menu-sub">
-              <?php
-              $admin=$this->session->userdata('admin');
-               if(empty($admin)==0){
-              ?>
+
               <li class="site-menu-item <?php $link=uri_string(); if($link =="jalan"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>jalan">
                   <span class="site-menu-title">Data Jalan</span>
                 </a>
               </li>
-              <?php } ?>
+
               <li class="site-menu-item <?php $link=uri_string(); if($link =="jalan_rusak"){ echo "active";} ?>">
                 <a class="animsition-link" href="<?php echo site_url(); ?>jalan_rusak">
                   <span class="site-menu-title">Data Jalan Rusak</span>
@@ -132,6 +133,7 @@
 
             </ul>
           </li>
+          <?php } ?>
           <?php
           $admin=$this->session->userdata('admin');
            if(empty($admin)==0){
@@ -211,6 +213,10 @@
           </li>
 
         <?php } ?>
+        <?php
+        $admin=$this->session->userdata('admin');
+         if(empty($admin)==1){
+        ?>
         <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="help"){ echo "active";} ?>">
           <a href="<?php echo site_url(); ?>help" data-dropdown-toggle="false">
             <i class="site-menu-icon  md-pin-help" aria-hidden="true"></i>
@@ -218,6 +224,7 @@
             <span class="site-menu-arrow"></span>
           </a>
         </li>
+        <?php } ?>
         </ul>
       </div>
     </div>
