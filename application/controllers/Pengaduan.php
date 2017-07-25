@@ -82,10 +82,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $cek= $this->M_Pengaduan->proses_pengaduan($id);
       if($cek){
         $this->proses_pengaduan_berhasil();
-        redirect("detail_pengaduan?id=".$id);
+        redirect("pengaduan");
       }else{
         $this->proses_pengaduan_gagal();
-        redirect("detail_pengaduan?id=".$id);
+        redirect("pengaduan");
       }
     }
 
@@ -117,10 +117,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $cek= $this->M_Pengaduan->Palsu_pengaduan($id);
       if($cek){
         $this->proses_pengaduan_palsu_berhasil();
-        redirect("detail_pengaduan?id=".$id);
+          redirect("pengaduan");
       }else{
         $this->proses_pengaduan_palsu_gagal();
-        redirect("detail_pengaduan?id=".$id);
+        redirect("pengaduan");
       }
     }
 
@@ -129,10 +129,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $cek= $this->M_Pengaduan->hapus_pengaduan($id);
       if($cek){
         $this->hapus_berhasil();
-        redirect("lihat_pengaduan");
+          redirect("pengaduan");
       }else{
         $this->hapus_gagal();
-          redirect("lihat_pengaduan");
+          redirect("pengaduan");
       }
     }
 

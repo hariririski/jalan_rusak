@@ -180,10 +180,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $cek= $this->M_Jalan_rusak->proses_hapus_jalan_rusak($id);
          if($cek){
            $this->tambah_berhasil();
-           redirect('tambah_jalan_rusak');
+           redirect('jalan_rusak');
          }else{
            $this->tambah_gagal();
-           redirect('tambah_jalan_rusak');
+           redirect('jalan_rusak');
          }
      }
 
@@ -209,10 +209,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        $cek= $this->M_Jalan_rusak->perbaikan_jalan_rusak($id);
        if($cek){
          $this->perbaikan_jalan_rusak_berhasil();
-         redirect("detail_jalan_rusak?id=".$id);
+         redirect("jalan_rusak");
        }else{
          $this->perbaikan_jalan_rusak_gagal();
-         redirect("detail_jalan_rusak?id=".$id);
+            redirect("jalan_rusak");
        }
      }
 

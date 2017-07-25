@@ -130,7 +130,7 @@
                     <?php
                     if($data_jalan->perbaikan==null){
                       echo '<span class="label label-round label-danger">Belum Diperbaikan</span>';
-                    }else if($data_jalan->kondisi==1){
+                    }else if($data_jalan->perbaikan==1){
                       echo '<span class="label label-round label-success">Sudah Diperbaikan</span>';
                     }
 
