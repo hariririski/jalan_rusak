@@ -115,10 +115,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           $cek= $this->M_Jalan->proses_hapus_jalan($id);
           if($cek){
             $this->tambah_berhasil();
-            redirect('tambah_jalan_rusak');
+            redirect('jalan');
           }else{
             $this->tambah_gagal();
-            redirect('tambah_jalan_rusak');
+            redirect("jalan");
           }
       }
 
