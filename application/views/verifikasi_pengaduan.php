@@ -62,7 +62,7 @@
 
   </style>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyBJEyzwKXH2n9SpdmUoRQqWbtvOVSLukyw&origins&callback=initMap"> </script>
+	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHkbiwS9EUDqEqtXt6cZo0wjBax9KXKA&origins&callback=initMap"> </script>
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery_combo.js"></script> <!-- ajax-bertingkat -->
 <script>
 $(document).ready(function() {

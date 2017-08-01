@@ -44,7 +44,7 @@ class Login extends CI_Controller {
 		$this->session->unset_userdata('admin');
 		$this->session->unset_userdata('super_admin');
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect('home');
 	}
 
 	public function proses_login() {

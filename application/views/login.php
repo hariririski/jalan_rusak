@@ -52,8 +52,8 @@
     <div class="page-content">
       <div class="page-brand-info">
         <div class="brand">
-          <img class="brand-img" width="50px" src="<?php echo site_url(); ?>assets/assets/images/logo.jpg" alt="...">
-          <h2 class="brand-text font-size-30">BINA MARGA PROVINSI ACEH</h2>
+          <a href="<?php echo base_url(); ?>"><img class="brand-img" width="50px" src="<?php echo site_url(); ?>assets/assets/images/logo.jpg" alt="...">
+          <h2 class="brand-text font-size-30">BINA MARGA PROVINSI ACEH</h2></a>
         </div>
         <!-- <p class="font-size-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.</p> -->

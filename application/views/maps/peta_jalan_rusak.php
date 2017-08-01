@@ -40,7 +40,7 @@
 } </style>
 
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyBJEyzwKXH2n9SpdmUoRQqWbtvOVSLukyw&origins&callback=initMap"> </script>
+	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHkbiwS9EUDqEqtXt6cZo0wjBax9KXKA&origins&callback=initMap"> </script>
 
 	<script src="jquery.js"></script>
   <script type="text/javascript" src="src/data.json"></script>

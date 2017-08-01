@@ -89,4 +89,14 @@ class M_Jalan extends CI_Model{
         $query=$this->db->query("");
         return $query->result();
     }
+
+    public function jalan_kecamatan($id)
+    {
+      return $this->db->get_where('jalan', "id_kecamatan = $id")->result();
+    }
+
+    public function satu_jalan($id)
+    {
+      return $this->db->get_where('jalan', "kode_ruas = '$id'")->result();
+    }
 }

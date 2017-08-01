@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Tambah Jalan</title>
+  <title>Bina Marga Prov Aceh</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -62,22 +62,72 @@
 
   </style>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyBJEyzwKXH2n9SpdmUoRQqWbtvOVSLukyw&origins&callback=initMap"> </script>
+	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHkbiwS9EUDqEqtXt6cZo0wjBax9KXKA&origins&callback=initMap"> </script>
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery_combo.js"></script> <!-- ajax-bertingkat -->
   <script>
-  $(document).ready(function() {
-  $("#kabupaten").change(function(){
-  var kode_kabupaten = $("#kabupaten").val();
-  $.ajax({
-    type: "POST",
-    url: "<?php echo base_url(); ?>jalan/kecamatan/"+kode_kabupaten,
-    data: "kode_kabupaten="+kode_kabupaten,
-    success: function(data){
-      $("#kecamatan").html(data);
-    }
-  });
-  });
-  });
+    $(document).ready(function() {
+      $("#kabupaten").change(function(){
+        var kode_kabupaten = $("#kabupaten").val();
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>jalan/kecamatan/"+kode_kabupaten,
+          data: "kode_kabupaten="+kode_kabupaten,
+          success: function(data){
+            $("#kecamatan").html(data);
+          }
+        });
+      });
+    });
+
+    $(document).ready(function() {
+      $("#kecamatan").change(function(){
+        var kode_kabupaten = $("#kecamatan").val();
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>jalan/jalan_kecamatan/"+kode_kabupaten,
+          data: "kode_kabupaten="+kode_kabupaten,
+          success: function(data){
+            $("#jalan").html(data);
+          }
+        });
+      });
+    });
+
+    $(document).ready(function() {
+      $("#jalan").change(function(){
+        var kode_kabupaten = $("#jalan").val();
+        
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>jalan/ringan/"+kode_kabupaten,
+          data: "kode_kabupaten="+kode_kabupaten,
+          success: function(data){
+            var element = document.getElementById("ringan");
+            element.innerHTML = data;
+          }
+        });
+        
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>jalan/berat/"+kode_kabupaten,
+          data: "kode_kabupaten="+kode_kabupaten,
+          success: function(data){
+            var element = document.getElementById("berat");
+            element.innerHTML = data;
+          }
+        });
+
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>jalan/belum_tembus/"+kode_kabupaten,
+          data: "kode_kabupaten="+kode_kabupaten,
+          success: function(data){
+            var element = document.getElementById("belum_tembus");
+            element.innerHTML = data;
+          }
+        });
+      });
+    });
   </script>
 </head>
 <body class="site-navbar-small ">
@@ -152,7 +202,7 @@
                       <span class="required">*</span>
                     </label>
                     <div class="col-lg-9 col-sm-9">
-                      <select class="form-control select2-hidden-accessible" name="kode_ruas" data-plugin="select2" required data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true">
+                      <select class="form-control select2-hidden-accessible" name="kode_ruas" data-plugin="select2" required data-placeholder="Pilih" data-allow-clear="true" tabindex="-1" aria-hidden="true" id="jalan">
                         <option value="">Pilih</option>
                         <?php
                            $i=0;
@@ -178,30 +228,30 @@
                         <div>
                           <div class="radio-custom radio-primary">
                             <input type="radio" id="inputAwesome" name="kondisi" value="1" required="" data-fv-field="porto_is">
-                            <label for="inputAwesome">Rusak Ringan</label>
+                            <label for="inputAwesome">Rusak Ringan <span id="ringan"></span></label>
                           </div>
                         </div>
                         <div>
                           <div class="radio-custom radio-primary">
                             <input type="radio" id="inputVeryAwesome" name="kondisi" value="2" data-fv-field="porto_is">
-                            <label for="inputVeryAwesome">Rusak Berat</label>
+                            <label for="inputVeryAwesome">Rusak Berat <span id="berat"></span></label>
                           </div>
                         </div>
                         <div>
                           <div class="radio-custom radio-primary">
                             <input type="radio" id="inputUltraAwesome" name="kondisi" value="3" data-fv-field="porto_is">
-                            <label for="inputUltraAwesome">Belum Tembus</label>
+                            <label for="inputUltraAwesome">Belum Tembus <span id="belum_tembus"></span></label>
                           </div>
                         </div>
                       </div>
                     <small class="help-block" data-fv-validator="notEmpty" data-fv-for="porto_is" data-fv-result="VALID" style="display: none;">Please specify at least one</small></div>
                   </div>
                   <div class="form-group form-material ">
-                    <label class="col-lg-3 col-sm-3 control-label">Luas Jalan Rusak
+                    <label class="col-lg-3 col-sm-3 control-label">Ruas Jalan Rusak
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="luas_jalan" placeholder="Luas Jalan Rusak" required="" >
+                      <input type="text" class="form-control" name="luas_jalan" placeholder="Ruas Jalan Rusak" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -214,7 +264,7 @@
                         <div class=" col-lg-9 col-sm-9">
                           <br>
                           <div class=" col-lg-4 col-sm-3">
-                            <label class="col-lg-4 col-sm-1 control-label">Lat
+                            <label class="col-lg-4 col-sm-1 control-label">latitude
                             </label>
                           </div>
                           <div class=" col-lg-5 col-sm-3">
@@ -222,7 +272,7 @@
                           </div>
 
                           <div class=" col-lg-4 col-sm-3">
-                            <label class="col-lg-4 col-sm-1 control-label">Lon
+                            <label class="col-lg-4 col-sm-1 control-label">longitude
                             </label>
                           </div>
                           <div class=" col-lg-5 col-sm-3">

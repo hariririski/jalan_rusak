@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Tambah Pengaduan</title>
+  <title>Bina Marga Prov Aceh</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
 
   </style>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyBJEyzwKXH2n9SpdmUoRQqWbtvOVSLukyw&origins&callback=initMap"> </script>
+	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHkbiwS9EUDqEqtXt6cZo0wjBax9KXKA&origins&callback=initMap"> </script>
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery_combo.js"></script> <!-- ajax-bertingkat -->
   <script>
   $(document).ready(function() {
@@ -218,11 +218,11 @@
                     <small class="help-block" data-fv-validator="notEmpty" data-fv-for="porto_is" data-fv-result="VALID" style="display: none;">Please specify at least one</small></div>
                   </div>
                   <div class="form-group form-material ">
-                    <label class="col-lg-3 col-sm-3 control-label">Luas Jalan Rusak
+                    <label class="col-lg-3 col-sm-3 control-label">Ruas Jalan Rusak
                       <span class="required">*</span>
                     </label>
                     <div class=" col-lg-9 col-sm-9">
-                      <input type="text" class="form-control" name="luas_jalan" placeholder="Luas Jalan Rusak" required="" >
+                      <input type="text" class="form-control" name="luas_jalan" placeholder="Ruas Jalan Rusak" required="" >
                     </div>
                   </div>
                   <div class="form-group form-material ">
@@ -235,7 +235,7 @@
                         <div class=" col-lg-9 col-sm-9">
                           <br>
                           <div class=" col-lg-4 col-sm-3">
-                            <label class="col-lg-4 col-sm-1 control-label">Lat
+                            <label class="col-lg-4 col-sm-1 control-label">latitude
                             </label>
                           </div>
                           <div class=" col-lg-5 col-sm-3">
@@ -243,7 +243,7 @@
                           </div>
 
                           <div class=" col-lg-4 col-sm-3">
-                            <label class="col-lg-4 col-sm-1 control-label">Lon
+                            <label class="col-lg-4 col-sm-1 control-label">longitude
                             </label>
                           </div>
                           <div class=" col-lg-5 col-sm-3">

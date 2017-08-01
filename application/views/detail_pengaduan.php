@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Detail Pengaduan</title>
+  <title>Bina Marga Prov Aceh</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
 
   </style>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyBJEyzwKXH2n9SpdmUoRQqWbtvOVSLukyw&origins&callback=initMap"> </script>
+	<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHkbiwS9EUDqEqtXt6cZo0wjBax9KXKA&origins&callback=initMap"> </script>
 
 </head>
 <body class="site-navbar-small ">

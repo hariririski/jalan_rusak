@@ -7,7 +7,8 @@ class M_Pengaduan extends CI_Model{
     }
     function lihat_pengaduan_umum()
     {
-        $query=$this->db->query("SELECT * FROM `pengaduan` LEFT JOIN kabupaten ON kabupaten.id_kabupaten=pengaduan.id_kabupaten LEFT JOIN kecamatan ON kecamatan.id_kecamatan=pengaduan.id_kecamatan where pengaduan.status='0' or pengaduan.status='1' order by tanggal_create DESC");
+        /*$query=$this->db->query("SELECT * FROM `pengaduan` LEFT JOIN kabupaten ON kabupaten.id_kabupaten=pengaduan.id_kabupaten LEFT JOIN kecamatan ON kecamatan.id_kecamatan=pengaduan.id_kecamatan where pengaduan.status='0' or pengaduan.status='1' order by tanggal_create DESC");*/
+        $query=$this->db->query("SELECT * FROM `pengaduan` LEFT JOIN kabupaten ON kabupaten.id_kabupaten=pengaduan.id_kabupaten LEFT JOIN kecamatan ON kecamatan.id_kecamatan=pengaduan.id_kecamatan order by tanggal_create DESC");
         return $query->result();
     }
 

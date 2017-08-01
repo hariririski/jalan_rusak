@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $this->load->model('M_Kabupaten');
          $this->load->model('M_Kecamatan');
          $this->load->model('M_Jalan');
-         if(empty($admin)==1){
+         /*if(empty($admin)==1){
             redirect("login/logout");
-           }
+           }*/
   			 }
 
 
@@ -24,15 +24,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        	}
 
         function kecamatan($id) {
+          $data1=null;
+          $this->load->model('M_Kecamatan');
+          $data=$this->M_Kecamatan->kecamatan_kab($id);
+
+          foreach($data as $data2){
+          $data1.='<option value="'.$data2->id_kecamatan.'">'.$data2->nama_kecamatan.'</option>';
+          }
+          echo $data1;
+        }
+
+        function jalan_kecamatan($id) {
     			$data1=null;
-    			$this->load->model('M_Kecamatan');
-    			$data=$this->M_Kecamatan->kecamatan_kab($id);
+
+    			$data=$this->M_Jalan->jalan_kecamatan($id);
 
     			foreach($data as $data2){
-    			$data1.='<option value="'.$data2->id_kecamatan.'">'.$data2->nama_kecamatan.'</option>';
+    			$data1.='<option value="'.$data2->kode_ruas.'">'.$data2->nama_jalan.'</option>';
     			}
     			echo $data1;
     		}
+
+        public function belum_tembus($id)
+        {
+          $data1=null;
+          $id = str_replace('%20', ' ', $id);
+          $data=$this->M_Jalan->satu_jalan($id);
+
+          foreach($data as $data2);
+
+          echo $data2->belum_tembus;
+        }
+
+        public function ringan($id)
+        {
+          $data1=null;
+          $id = str_replace('%20', ' ', $id);
+          $data=$this->M_Jalan->satu_jalan($id);
+
+          foreach($data as $data2);
+
+          echo $data2->rusak_ringan;
+        }
+
+        public function berat($id)
+        {
+          $data1=null;
+          $id = str_replace('%20', ' ', $id);
+          $data=$this->M_Jalan->satu_jalan($id);
+
+          foreach($data as $data2);
+
+          echo $data2->rusak_berat;
+        }
 
         public function tambah_jalan()
        {

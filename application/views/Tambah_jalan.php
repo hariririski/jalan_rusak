@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>Tambah Jalan</title>
+  <title>Bina Marga Prov Aceh</title>
   <?php echo $this->load->view('common/head', '', TRUE);?>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/css/bootstrap.min.css">
@@ -180,20 +180,20 @@ $("#kabupaten").change(function(){
                 <div class="col-lg-6 form-horizontal">
                     <h3 class="panel-title">Kolektor Primer</h3>
                     <div class="form-group form-material ">
-                      <label class="col-lg-3 col-sm-3 control-label">Nama KJP
+                      <label class="col-lg-3 col-sm-3 control-label">Nama Jkp
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="nama_kjp" placeholder="Nama KJP" required="" >
+                        <input type="text" class="form-control" name="nama_kjp" placeholder="Nama Jkp" required="" >
 
                     </div>
                     </div>
                     <div class="form-group form-material ">
-                      <label class="col-lg-3 col-sm-3 control-label">No KJP
+                      <label class="col-lg-3 col-sm-3 control-label">No Jkp
                         <span class="required">*</span>
                       </label>
                       <div class=" col-lg-9 col-sm-9">
-                        <input type="text" class="form-control" name="no_kjp" placeholder="No KJP" required="" >
+                        <input type="text" class="form-control" name="no_kjp" placeholder="No Jkp" required="" >
                       </div>
                     </div>
                     <div class="form-group form-material ">
